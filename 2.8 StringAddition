@@ -1,0 +1,10 @@
+public class StringAddition
+{
+	public static void main(String argv[])
+	{
+		String s1="Hello " + "World, ";
+		String s2="Hello " + "beautiful" + "World";
+		System.out.println(s1+s2);
+	}
+}
+  
