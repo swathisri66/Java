@@ -1,0 +1,10 @@
+import java.awt.*;
+public class Example extends java.applet.Applet
+  {
+  public void paint(Graphics g)
+    {
+    int i;
+    int j = 10;
+    }
+  }
+  
