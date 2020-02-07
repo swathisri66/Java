@@ -1,0 +1,16 @@
+public class RelationOperators
+	{
+	public static void main(String argv[])
+		{
+			int x=5,y=8;
+			System.out.println(" x="+x);
+			System.out.println(" y="+y);
+			System.out.println("x<y="+(x<y));
+			System.out.println("x>y="+(x>y));
+			System.out.println("x<=y="+(x<=y));
+			System.out.println("x>=y="+(x>=y));
+			System.out.println("x==y="+(x==y));
+			System.out.println("x!=y="+(x!=y));
+		}
+	}	
+	
