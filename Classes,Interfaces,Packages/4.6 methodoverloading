@@ -1,0 +1,20 @@
+public class Example6
+{
+	public static void main(String argv[])
+	{
+		ExampleClass ec = new ExampleClass();
+		ec.exampleMethod();  // calling the method
+		ec.exampleMEthod(10); //calling the overloaded method
+	}
+}
+		class ExampleClass
+		{ 
+		void exapleMethod()  // method to be overloaded
+		{
+			System.out.println("Hello World");
+		}
+			void exampleMethod(int i) //overloading
+			{
+				System.out.println("Hello Java");
+			}
+		}
