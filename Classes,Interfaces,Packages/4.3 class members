@@ -1,0 +1,28 @@
+public class Example3
+{
+	public static void main(String argv[])
+	{
+		ExampleClass ec1=new ExampleClass();
+		ExampleClass ec2=new ExampleClass("Hello CMC Ltd");
+		ec1.exampleMethod();
+		ec2.exampleMethod();
+	}
+}
+class ExampleClass{
+	String ss; //class number is an object
+				//string class is defined in JDK library
+	ExampleClass()
+	{
+		ss="Hello World"; //default constructor
+	}
+	
+	ExampleClass(String s)
+	{
+		ss=s;
+	}
+	
+	void exampleMethod()
+	{
+		System.out.println(ss);
+	}
+}
