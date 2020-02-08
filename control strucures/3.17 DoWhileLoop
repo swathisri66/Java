@@ -1,0 +1,13 @@
+public class DoWhileLoop
+{
+	public static void main(String argv[])
+	{
+		int i=0;
+		do
+		{
+			System.out.println("number : "+i);
+			i++;
+		}while(i<10);
+		System.out.println("End of the while loop");
+	}
+}
