@@ -1,0 +1,30 @@
+public class WhileLoopBreakLabel
+{
+	public static void main(String argv[])
+	{
+		int i=1, j=1;
+		label: while(i<=3)
+		{
+			while(j<=3)
+			{
+				if((i==2)&&(j==2))
+				{
+					i++;
+					j=1;
+					System.out.println();
+					break label;
+				}
+				System.out.println("("+i+","+j+")");
+				j++;
+			}
+			System.out.println();
+			j=1;
+			i++;
+		}
+		System.out.println();
+		j=1;
+		i++;
+	}
+	System.out.println("End of the while loop");
+}
+}
