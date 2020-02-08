@@ -1,0 +1,31 @@
+public class Example5
+{
+	public static void main(String argv[])
+	{
+		ChildClass ch=new ChildClass();
+		ch.parentMethod();
+		ch.childMethod();
+	}
+}
+
+class ParentClass
+{
+	void parentMethod() //this method is overridden in the derived class{
+		{
+			System.out.println("Hello Parent");
+		}
+	}
+	
+	class ChildClass extends ParentsClass
+	{
+		void childMethod()
+		{
+			System.out.println("Hello Child");
+		}
+		
+		void parentMethod() //Overriding in the derived class{
+			{ 
+			System.out.println("Hello World");
+			}
+}
+		
