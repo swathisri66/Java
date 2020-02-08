@@ -1,0 +1,62 @@
+class ExampleClass
+{
+	int a;
+	private int b;
+	protected int c;
+	public int d;
+	
+	ExampleClass()
+	{
+		a=10;
+		b=20;
+		c=30;
+		d=40;
+	}
+	
+	void defaultMethod()
+	{
+		System.out.println("DefaultMethod");
+	}
+	
+	private void privateMethod()
+	{
+		System.out.println("Private MEthod");
+	}
+	
+	protected void protecteMEthod()
+	{
+		System.out.println("Protected Method");
+	}
+	public void publicMethod()
+	{
+		System.out.println("Public Method");
+	}
+	
+	void generalMethod()
+	{
+		defaultMethod();
+		privateMethod(); //comment1
+		protectedMethod();
+		publicMethod();
+		System.out.println("Default a="+ a);
+		System.out.println("Private b="+ b);
+		System.out.println("Protected c="+ c);
+		System.out.println("Public d="+ d);
+	}
+}
+public class Example7
+{
+	public static void main(String argv[])
+	{
+		ExampleClass ec=new ExampleClass();
+		ec.defaultMethod();
+		//ec.privateMEthod();
+		ec.protectedMethod();
+		ec.publicMethod();
+		ec.generalMEthod();
+		System.out.println("default a="+ ec.a);
+		//System.out.println("private b="+ ec.b);
+		System.out.println("protected c=" ec.c);
+		System.out.println("public d="+ ec.d);
+	}
+}
