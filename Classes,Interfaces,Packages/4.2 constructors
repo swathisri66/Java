@@ -1,0 +1,43 @@
+public class Example2
+{
+	public static void main(String argv[])
+	{
+		ExampleClass ec1=new ExampleClass();
+		ExampleClass ec2=new ExampleClass ('b',20,200,8);
+		System.out.println("ec1.cc="+ ec1.cc);
+		System.out.println("ec1.ii="+ ec1.ii);
+		System.out.println("ec1.dd="+ ec1.dd);
+		System.out.println("ec2.cc="+ ec2.cc);
+		System.out.println("ec2.ii="+ ec2.ii);
+		System.out.println("ec2.dd="+ ec2.dd);
+	}
+}
+class ExampleClass
+{
+	char cc;
+	int ii;
+	double dd;
+	ExampleClass()
+	{
+		cc = 'a';
+		ii = 10;
+		dd = 100.4;
+	}
+	
+	ExampleClass(char c, int i, double d)
+	{
+		cc=c;
+		ii=i;
+		dd=d;
+	}
+	
+	void exampleMethod1()
+	{
+		System.out.println("Hello World");
+	}
+	
+	void exampleMethod2()
+	{
+		System.out.println("Hello Java");
+	}
+}
