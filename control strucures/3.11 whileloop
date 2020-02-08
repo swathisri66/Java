@@ -1,0 +1,13 @@
+public class WhileLoop
+{
+	public static void main(String argv[])
+	{
+		int i = 0;
+		while(i<10)
+		{
+			System.out.println("number :"+i);
+			i++;
+		}
+		System.out.println("End of the while loop");
+	}
+}
