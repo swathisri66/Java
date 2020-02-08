@@ -1,0 +1,10 @@
+public class Example extends java.applet.Applet
+{
+	public void paint(Graphics g)
+	{
+		int test_var = 10;
+		if (test_var <= 10)
+			g.drawString ("Hello World", 10,10);
+		g.drawstring("Hello Java", 10,35);
+	}
+}
