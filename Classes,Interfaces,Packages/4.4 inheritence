@@ -1,0 +1,37 @@
+public class Example4
+{
+	public static void main(String argv[])
+	{
+		ChildClass ch=new ChildClass();
+		System.out.println("ch.pi="+ ch.pi); //inherited from parent
+		System.out.println("ch.ci=" ch.ci);
+		ch.parentMethod();
+		ch.childMEthod();
+	}
+}
+
+class ChildClass extends ParentClass
+{
+	int ci;
+	ChildClass()
+	{
+		ci=100;
+	}
+	void childMethod()
+	{
+		System.out.println("Hello Java");
+	}
+}
+
+class ParentClass{
+	int pi;
+	ParentClass()
+	{
+		pi=10;
+	}
+	
+	void parentMEthod()
+	{
+		System.out.println("Hello World");
+	}
+}
