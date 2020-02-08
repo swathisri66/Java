@@ -1,0 +1,20 @@
+public class IfElseBranching
+{
+	public static void main(String argv[])
+	{
+		System.out.println("Enter an alphabet:");
+		char ch=(char)-1;
+		try
+		{
+			ch=(char)System.in.read();
+		}catch(Exception e)
+		{
+		}
+		if (ch=='x')
+		{
+			System.out.println("Hello World");
+		}
+		elseSystem.out.println("Hello CMC Ltd");
+	}
+}
+}
