@@ -1,0 +1,19 @@
+public class WhileLoopNested
+{
+	public static void main(String argv[])
+	{
+		int i=1,j=1;
+		while(i<=3)
+		{
+			while(j<=3)
+			{
+				System.out.println("("+i+","+j+") ");
+				j++;
+				System.out.println();
+				j=1;
+				i++;
+			}
+			System.out.println("End of the while loop");
+		}
+	}
+	
