@@ -1,0 +1,24 @@
+public class IfElseCascade
+{
+	public static void main(String argv[])
+	{
+	int i;
+	char ch=(char)-1;
+	System.out.println("Enter a character:");
+	try
+	{
+		ch=(char)System.in.read();
+	}catch(Exception e)
+	{
+	}
+	if(ch=='x')	
+		i=10;
+	else if(ch=='y')
+		i=20;
+	else if(ch=='z')
+		i=30;
+	else
+		i=40;
+	System.out.println("number:"+i);
+	}
+}
