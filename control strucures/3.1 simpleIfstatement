@@ -1,0 +1,19 @@
+public class SimpleIfStatement
+	{
+	public static void main(String argv[])
+	{
+		char ch=(char)-1;
+		System.out.println("Enter an alphabet:");
+		try
+		{
+			ch=(char)System.in.read();
+		}catch(Exception e)
+		{
+		}
+		if(ch=='x')
+		{
+			System.out.println("Hello World");
+		}
+		System.out.println("Hello Java");
+	}
+	}
