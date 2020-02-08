@@ -1,0 +1,19 @@
+public class DoWhileLoopBreak
+{
+	public static void main(String argv[])
+	{
+		int i=0;
+		do
+		{
+			if(i==2)
+			{
+				i++;
+				break;
+			}
+			System.out.println("number : "+i);
+			i++;
+		}while(i<10);
+		System.out.println("End of the do-while loop");
+	}
+}
+
