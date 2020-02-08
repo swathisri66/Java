@@ -1,0 +1,18 @@
+public class WhileLoopBreak
+{
+	public static void main(String argv[])
+	{
+		int i=0;
+		while(i<5)
+		{
+			if(i==2)
+			{
+				i++;
+				Break;
+			}
+			System.out.println("number :"+i);
+			i++;
+		}
+		System.out.println("End of the while loop");
+	}
+}
