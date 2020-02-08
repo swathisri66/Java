@@ -1,0 +1,23 @@
+public class Example1
+{
+	public static void main(String argv[])
+	{
+		ExampleClass ec=new ExampleClass();
+		ec.exampleMethod1();
+		ec.exampleMethod2();
+	}
+}
+class ExampleClass{
+	char ch;
+	int ii;
+	double dd;
+	
+	void exampleMethod1()
+	{
+		System.out.println("Hello World");
+	}
+	void exampleMethod2()
+	{
+		System.out.println("Hello Java");
+	}
+}
