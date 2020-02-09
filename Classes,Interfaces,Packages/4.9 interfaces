@@ -1,0 +1,38 @@
+interface example
+{
+    abstract public void method1();
+    abstract public void method2();
+}
+class ExampleClass implements ExampleClass{
+    {
+        int aa;
+        int bb;
+        public void exampleMethod1()
+        {
+            System.out.println("Hello World");
+        }
+    public void exampleMethod2()
+    {
+        System.out.println("Hello Java");
+    }
+    public void method1()
+    {
+        System.out.println("Hi World");
+    }
+    public void method2()
+    {
+        System.out.println("Hi Java");
+    }
+}
+
+Public class Example9
+{
+    public static void main(String argv[])
+    {
+        ExampleClass ec = new ExampleClass();
+        ec.exampleMethod1();
+        ec.exampleMEthod2();
+        ec.method1();
+        ec.method2();
+    }
+}
