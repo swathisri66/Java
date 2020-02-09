@@ -1,0 +1,46 @@
+class ParentClass
+{
+	int a;
+	private int b;
+	protected int c;
+	public int d;
+	ParentClass()
+	{
+		a = 10;
+		b = 20;
+		c = 30;
+		d = 40;
+	}
+	void defaultMethod()
+	{
+		System.out.println("Default Method");
+	}
+	
+	private void privateMethod()
+	{
+		System.out.println("Private Method");
+	}
+	protected void protectedMethod()
+	{
+		System.out.println("Protected Method");
+	}
+	public void publicMethod()
+	{
+		System.out.println("Public Method");
+	}
+	
+}
+class ChildClass extends ParentClass
+{
+	void childMethod()
+	{
+		defaultMethod();
+		//privateMethod();
+		protectedMethod();
+		publicMethod();
+		System.out.println("Default a="+a);
+		System.out.println("Private b="+b);
+		System.out.println("Protectedc="+c);
+		System.out.println("Public d="+d);
+	}
+}
