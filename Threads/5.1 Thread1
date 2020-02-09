@@ -1,0 +1,30 @@
+class Thread1Class extends Thread{
+	public void run()
+	{
+		for(int i=0; i<10; i++)
+		{
+			System.out.println("Hello Thread1");
+		}
+	}
+}
+class Thread2Class extends Thread
+{
+	public void run()
+	{
+		for(int i=0; i<10; i++)
+		{
+			System.out.println("Hello Thread2");
+		}
+	}
+}
+
+public class Thread
+{
+	public static void main(String argv [])
+	{
+		Thread1Class thread1=new Thread1Class();
+		Thread2Class thread2=new Thread2Class();
+		thread1.start();
+		thread2.start();
+	}
+}
