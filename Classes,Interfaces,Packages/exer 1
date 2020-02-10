@@ -1,0 +1,23 @@
+public class Example
+{
+    public static void main(String argv[])
+    {
+        ExampleClass ec=new ExampleClass(5,10);
+        System.out.println("ec.ii="+ec.ii);
+        System.out.println("ec.jj="+ec.jj);
+        ec.ii=50;
+        ec.jj=100;
+        System.out.println("ec.ii="+ec.ii);
+        System.out.println("ec.jj="+ec.jj);
+    }
+}
+class ExampleClass
+{
+    private int ii;
+    public int jj;
+    public ExampleClass(int i, int j)
+    {
+        ii=i;
+        jj=j;
+    }
+}
