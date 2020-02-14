@@ -1,0 +1,20 @@
+class Example4ThreadClass implements Runnable{
+	public void run()
+	{
+		while(true)
+		{
+			System.out.println(Thread.currentThread().getName());
+		}
+	}
+}
+public class Example4ThreadClass{
+	public static void main(String argv[])
+	{
+		Example4ThreadClass aETC=new
+		Example4ThreadClass();
+		Thread thread1=new Thread(aETC, "boys");
+		Thread thread2=new Thread(aETC, "girls");
+		thread1.start;
+		thread2.start;
+	}
+}
