@@ -1,0 +1,82 @@
+import java.io.*;
+public class Deposit
+{
+	static int balance = 1000;
+	public static void main(String[] args)
+	{
+		printWriter out = new PrintWriter(System.out,true);
+		Account account = new Account(out);
+		DepositThread first;
+		DepositThread second;
+		first = new DepositThread(account, 1000, "#1");
+		second = new DepositThread(account, 1000, "\t\t\t\t #2");
+		first.start();
+		second.start();
+		//wait for both the threads to finish
+		try
+		{
+			first.join();
+			second.join();
+		} catch(InterruptedException e)
+		{
+		}
+		out.println("Final balance is ;" +balance);
+	}
+}
+
+class Account
+{
+	PrintWriter out;
+	public Account(PrintWriter out)
+	{
+		this.out=out;
+	}
+	
+	public void deposit(int amount, String name)
+	{
+		int balance;
+		out.println(name+ "trying to deposit" + amount);
+		out.println(name+ "getting balance...");
+		balance=getBalance();
+		out.println(name+" setting balance...");
+		setBalance(balance);
+		out.println(name+ "new balance set to" + Deposit.balance);
+	}
+	public int getBalance()
+	{
+		try
+		{
+			Thread.sleep(5000);
+		}catch(InterruptedException e)
+		{
+		}
+		return Deposit.balance;
+	}
+	public void setBalance(int balance)
+	{
+		try
+		{
+			Thread.sleep(5000);
+		}catch(InterruptedException e)
+		{
+		}
+		Deposit.balance = balance;
+	}
+}
+
+class DepositThread extends Thread{
+	Account account;
+	int amount;
+	String message;
+	public DepositThread(Account account, int amount, String message)
+	{
+		this.account=account;
+		this.amount=amount;
+		this.message=message;
+	}
+	
+	public void run()
+	{
+		account.deposit(amount, message);
+	}
+}
