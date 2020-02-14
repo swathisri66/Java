@@ -1,0 +1,25 @@
+class Example6ThreadClass implements Runnable{
+	public void run()
+	{
+		while(true)
+		{
+			System.out.println(Thread.currentThread().getName());
+			try
+			{
+				Thread.sleep(100);
+			}catch(InteruptedException ie)
+			{
+				return;
+			}
+		}
+	}
+}
+
+public class Example6ThreadClass{
+	public static void main(String argv[])
+	{
+		Example6ThreadClass aETC=new Example6ThreadClass();
+		new Thread(aETC, "boys").start();
+		new Thread(aETC, "girls").start();
+	}
+}
