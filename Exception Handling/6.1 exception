@@ -1,0 +1,10 @@
+import java.io.*;
+public class Example1
+{
+	public static void main(String argv[])
+	{
+		int i=1, j=0, k;
+		k=i/j;
+		System.out.println("Hello World");
+	}
+}
