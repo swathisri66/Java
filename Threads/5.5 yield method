@@ -1,0 +1,20 @@
+class Example5ThreadClass implements Runnable
+{
+	public void run()
+	{
+		while(true)
+		{
+			System.out.println(Thread.currentThread().getName());
+			Thread.yield();
+		}
+	}
+}
+
+public class Example5ThreadClass{
+	public static void main(String argv[])
+	{
+		Example5ThreadClass aETC=new Example5ThreadClass();
+		new Thread(aETC, "boys").start();
+		new Thread(aETC,"girls").start();
+	}
+}
