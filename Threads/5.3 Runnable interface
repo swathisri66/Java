@@ -1,0 +1,22 @@
+class Example3ThreadClass implements Runnable
+{
+	public void run()
+	{
+		for(int i=0;i<10;i++)
+			{
+				System.out.println(Thread.currentThrad().getName());
+			}
+	}
+}
+
+public class Example3ThreadClass
+{
+	public static void main(String argv[])
+	{
+		Example3ThreadClass a ETC=new Example3ThreadClass();
+		Thread thread1=new Thread(aETC, "My Thread");
+		Thread thread2=new Thread(aETC, "Your Thread");
+		thread1.start();
+		thread2.start();
+	}
+}
