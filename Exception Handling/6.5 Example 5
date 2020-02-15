@@ -1,0 +1,21 @@
+import java.io.*;
+class OutofRange extends Exception{
+	OutofRange(String ss)
+	{
+		super(ss);
+	}
+}
+public class Example5
+{
+	public static void main(String argv[])
+	{
+		int i=10;
+		try
+		{
+			if(i<12)throw new OutofRange("10 is the limit");
+		} catch(OutofRange o)
+		{
+			System.out.println("Error:"+o.getMessage());
+		}
+	}
+}
