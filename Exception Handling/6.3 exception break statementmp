@@ -1,0 +1,18 @@
+import java.io.*;
+public class Example3
+{
+	public static void main(String argv[])
+	{
+	int i=1,j=0,k;
+	try
+	{
+		k=i/j;
+		System.out.println("Hello Java");
+	}catch(ArithmeticException ae)
+	{
+		System.out.println("Division by zero, illegal operation");
+	}
+	System.out.println("Hello World");
+	}
+}
+
