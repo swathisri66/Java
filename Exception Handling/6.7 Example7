@@ -1,0 +1,32 @@
+import java.io.*;
+cpublic class Example7
+{
+	public static void main(String argv[])
+	{
+		System.out.println("Inside main(). calling method1()");
+		method1();
+		System.out.println("End of the Program");
+	}
+	
+	public static void method1()
+	{
+		System.out.println("Inside method1().calling method2()");
+		method2();
+		System.out.println("Returning from method1()");
+	}
+	
+	public static void method2()
+	{
+		System.out.println("Inside method2(). calling method3()");
+		method3();
+		System.out.println("Returning from method2()");
+	}
+	
+	public static void method3()
+	{
+		System.out.println("Inside method3().executing method3(););
+		int i=1,j=0,k;
+		k=i/j;
+		System.out.println("Returning from method3()");
+	}
+}
