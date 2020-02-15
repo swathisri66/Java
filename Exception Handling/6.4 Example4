@@ -1,0 +1,16 @@
+import java.io.*;
+public class Example3
+{
+	public static void main(String argv[])
+	{
+	int i=1,j=0,k;
+	try
+	{
+		k=i/j;
+		}catch(ClassCastException cce)
+	{
+		System.out.println("Division by zero, illegal operation");
+	}
+	System.out.println("Hello World");
+	}
+}
