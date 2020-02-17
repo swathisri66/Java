@@ -1,0 +1,77 @@
+Java 
+- CORE
+- ADV
+- J2EE
+
+CORE JAVA
+---------
+Programming languages
+1. HLL (High level languages) user understandable
+   --> Procedure oriented languages
+        ex: c, pascal, cobol, basic, fortran
+   --> Object oriented languages
+        ex: C++, java, python, C#, Ruby, R-lang, ABAP, GO
+
+2. LLL (Low level languages) machine understandable
+   --> Ada, Assembly, Binary Language
+
+Java is a High level and Object oriented programming lang.
+
+Java Features
+-------------
+1) Simple to learn (because it is a HLL)
+2) Support to OOPs concepts  (classes & objects, Encapsulation, Inheritance,Abstraction, Polymorphysm)
+3) Platform independent  (not ristricted to any operating system)
+     source code can be compiled on one O/S and can be executed on another O/S
+4) Robust language (automated: it has a large library of functions, classes, packages)
+5) Multi-Threaded Language  
+6) Exception handelling
+
+History of java
+- Originally java was called as Oak (developed Oak International Corporation)
+- Later oak was taken over by Sun Micro Systems and software was renamed as Java
+- But now java belongs to Oracle Corporation (oracle has taken over sun micro system)
+
+
+Java Programming Language structure
+-----------------------------------
+Java has as set 58 keywords (now 54 keywords)
+
+java notations:
+--> UPPERCASE notation is used for Constant declarations
+--> lowercase notation is used for keywords, package names
+--> TitleCase notation is used for class names or interface names
+       class StudentInformation 
+--> camelCase notation is used for variables, functions  
+       int studentRollNumber, marksObtained, averageMarks;
+       long phoneNumber;
+       void getEmpData()
+       {
+       }
+
+structure of a java program
+---------------------------
+
+/* multiple line 
+    comment (this can be for many lines also) */
+// single line comment   (there is no ending symbol)
+import packagename.ClassName;
+      (OR)
+import packagename.*;     (* symbol indicates all classes and interfaces of the package)
+class <user defined ClassName>
+{
+   .............................
+   .............................
+   ...properties of the class...
+      variables and functions
+   .............................
+   .............................
+   public static void main(String args[])       // both ways are correct int x[] (OR) int[] x;
+   {
+      .............................
+      .............................
+        actual program content (main logic)
+      .............................
+      .............................
+   }    // main closing
+};      // end of the class     writing (;) is optional
