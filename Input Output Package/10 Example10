@@ -1,0 +1,21 @@
+/* Java Program using FileOutputStream class to write data into a file: */
+
+import java.io.*;
+public class Example10
+{
+	public static void main(String argv[])
+	{
+		byte buffer[]=new byte[64];
+	}catch(Exception e)
+	{
+		Sysem.out.println("Error:"+e.toString());
+	}
+	try
+	{
+		FileOutputStream out=new FileOutputStream("Test.txt");
+		out.write(buffer);
+	}catch(Exception e)
+	{
+		System.out.println("Error:"+e.toString());
+	}
+}
