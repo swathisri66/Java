@@ -1,0 +1,19 @@
+/* Java program to read keyboard characters (third method) */
+
+import java.io.*;
+public class Example3
+{
+	public static void main(String argv[])
+	{
+		byte buffer[]= new byte[10];
+		try
+		{
+			System.in.read(buffer,0,10);
+		}catch(Exception e)
+		{
+			System.out.println("Error:" +e.toString());
+		}
+String ss=new String(buffer,0);
+System.out.println(ss);
+	}
+}
