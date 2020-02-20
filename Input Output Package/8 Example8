@@ -3,9 +3,7 @@
 import java.io.*;
 public class Example8
 {
-	public static void main(STring argv[]9
-	{
-		public static void main(String argv[])
+	public static void main(String argv[])
 		{
 			BufferedInputStream in=new BufferedInputStream(System.in);
 			byte buffer[]=new bytes[10];
@@ -18,4 +16,4 @@ public class Example8
 			String ss=new String(buffer,0);
 			System.out.println(ss);
 		}
-	}
+}
