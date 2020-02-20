@@ -1,0 +1,23 @@
+/* Java program concatenating two input streams */
+
+import java.io.*;
+public class Example5
+{
+	public static void main(STring argv[]9
+	{
+		int cc;
+		try
+		{
+			FileInputStream fis1=new FileInputStream("text1.txt");
+			FileInputStream fis2=new FileInputStream("text2.txt");
+			SequenceInputStream sis=new SequenceInputStream(fis1,fis2);
+			while((cc=sis.read())!=-1)
+			{
+				System.out.print((char)cc);
+			}
+		}catch(Exception e)
+		{
+			System.out.println("Error:"+e.toString());
+		}
+	}
+}
