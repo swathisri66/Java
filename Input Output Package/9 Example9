@@ -1,0 +1,20 @@
+Java Program which uses the readLine() method of DataInputStream to read a floating point value from the user */
+
+import java.io.*;
+public class Example9
+{
+	public static void main(String argv[])
+	{
+		DataInputStream in0new DataInputStream(System.in);
+		String ss=new String();
+		try
+		{
+			ss=in.readLine();
+			float ff=Float.valueOf(sss).floatValue();
+			System.out.println(ff);
+		}catch(Exception e)
+		{
+			System.out.println("Error:"+e.toString());
+		}
+	}
+}
