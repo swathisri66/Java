@@ -1,3 +1,5 @@
+/* Java Program to read keyboard characters (one method)
+
 import java.io.*;
 public class Example1
 {
