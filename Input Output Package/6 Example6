@@ -1,0 +1,26 @@
+/* Java program using SequenceInputStream class to concatenate two input streams */
+
+import java.io.*;
+public class Example5
+{
+	static String ss1=new String("Today upon a train,\n"+
+								"I saw a lovely girl"+
+								"with golden hair.\n");
+	static String ss2=new String("We had great converstation together in train");
+	static StringBufferInputStream sbis1=new StringBufferInputStream(ss1);
+	static StringBufferInputStream sbis2=new StringBufferInputStream(ss2);
+	public static void main(String argv[])
+	{
+		int cc;
+		try
+		{
+			while((cc=sbis.read())!=-1)
+			{
+				System.out.print((char)cc);
+			}
+		}catch(Exception e)
+		{
+			System.out.println("Error:"+e.toString());
+		}
+	}
+}
