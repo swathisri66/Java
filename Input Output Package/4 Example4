@@ -1,0 +1,20 @@
+/* Java program to read data from a text file */
+
+import java.io.*;
+public class Example4
+{
+	public static void main(String argv[])
+	{
+		byte buffer[]=new byte[64];
+		try
+		{
+			FileInputStream in=new FileInputStream("poem.txt");
+			in.read(buffer,0,64);
+		}catch(Exception e)
+		{
+			System.out.println("Error:"+e.toString());
+		}
+		String ss=new String(buffer,0);
+		System.out.println(ss);
+	}
+}
