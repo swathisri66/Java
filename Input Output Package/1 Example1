@@ -1,0 +1,21 @@
+import java.io.*
+public class Example1
+{
+	public static void main(String argv[])
+	{
+		char cc;
+		StringBuffer ss= new StringBuffer();
+		try
+		{
+			while((cc=(char)System.in.read())!='\n')
+			{
+				ss.aapend(cc);
+				
+			}
+		}catch(Exception e)
+		{
+			System.out.println("Error:"+e.toString());
+		}
+		System.out.println(ss);
+	}
+}
