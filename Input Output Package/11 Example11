@@ -1,0 +1,21 @@
+/* Java Program which uses buffeedOutputStream class to output text data: */
+
+import java.io.*;
+public class Example11
+{
+	public static void main(String argv[])
+	{
+		String ss=new String("Hello World\n");
+		byte buffer[]=new byte[64];
+		ss.getBytes(0,ss.length(),buffer,0);
+		BufferedOutputStream out=new BufferedOutputStream(System.out);
+		try
+		{
+			out.write(buffer,0,64);
+			out.flush();
+		}catch(Exception e)
+		{
+			System.out.println("Error:"+e.toString());
+		}
+	}
+}
