@@ -1,0 +1,21 @@
+/* Java program using BufferedInputStream class to read input from the keyboard */
+
+import java.io.*;
+public class Example8
+{
+	public static void main(STring argv[]9
+	{
+		public static void main(String argv[])
+		{
+			BufferedInputStream in=new BufferedInputStream(System.in);
+			byte buffer[]=new bytes[10];
+			try
+			{in.read(buffer,0,10);
+			}catch(Exception e)
+			{
+				System.out.println("Error:"+e.toString());
+			}
+			String ss=new String(buffer,0);
+			System.out.println(ss);
+		}
+	}
