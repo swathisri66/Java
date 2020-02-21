@@ -1,0 +1,15 @@
+/* Java program to draw a rectangle */
+
+import java.applet.*;
+import java.awt.*;
+public class Example2 extends java.applet.Applet 
+{
+	public void paint(Graphics g)
+{
+	g.drawRect(10,10,200,100);
+}
+  public void start()
+{
+	repaint();
+}
+}
