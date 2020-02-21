@@ -1,0 +1,21 @@
+/* Java program to draw hollow and filled polygons */
+
+import java.applet.*;
+import java.awt.*;
+public class Example5 extends java.applet.Applet 
+{
+	int x[]={100,200,250,50,100};
+	int y[]={50,50,200,200,50};
+	int a[]={300,350,400,300};
+	int b[]={200,50,200,200};
+	public void paint(Graphics g)
+	{
+		g.drawPolygon(x,y,5);
+		g.setColor(Color.red);
+		g.fillPolygon(a,b,4);
+	}
+	public void start()
+	{
+		repaint();
+	}
+}
