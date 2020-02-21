@@ -1,0 +1,16 @@
+/* Java program to draw a line */
+
+
+import java.applet.*;
+import java.awt.*;
+public class Example1 extends Applet implements Runnable
+{
+	public void paint(Graphics g9
+	{
+		g.drawLine(10,10,110,110);
+	}
+	public void start()
+	{
+		repaint();
+	}
+}
