@@ -1,0 +1,16 @@
+/* The Hello World program rewritten */
+
+import java.applet.*;
+import java.awt.*;
+public class Example5 extends java.applet.Applet
+{
+	String message;
+	public void init()
+	{
+		message=getParameter("msg");
+	}
+	public void paint(Graphics g)
+	{
+		g.drawString(message,50,50);
+	}
+}
