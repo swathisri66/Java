@@ -3,9 +3,9 @@
 
 import java.applet.*;
 import java.awt.*;
-public class Example1 extends Applet implements Runnable
+public class Example1 extends java.applet.Applet
 {
-	public void paint(Graphics g9
+	public void paint(Graphics g)
 	{
 		g.drawLine(10,10,110,110);
 	}
