@@ -1,0 +1,18 @@
+/* Java applet to display an image */
+
+import java.applet.*;
+import java.awt.*;
+public class Example6 extends java.applet.Applet
+{
+	String graphics;
+	public void init()
+	{
+		graphics=getParameter("graph");
+		image=getImage(getDocumentBase(),graphics);
+	}
+	public void paint(Graphics g)
+	{
+		g.drawImage(image,100,40,this);
+	}
+}
+
