@@ -1,0 +1,6 @@
+/* Simpel java applet */
+
+public class Example1 extends java.applet.Applet
+{
+
+}
