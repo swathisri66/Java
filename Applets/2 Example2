@@ -1,0 +1,12 @@
+/* Java code for the Hello World applet */
+
+import java.awt.*;
+import java.applet.*;
+
+public class Example2 extends java.applet.Applet
+{
+	public void paint(Graphics g)
+	{
+		g.drawString("Hello World", 50,50);
+	}
+}
