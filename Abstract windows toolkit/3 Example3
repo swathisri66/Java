@@ -1,0 +1,16 @@
+/* Java program to draw an ecllipse */
+
+import java.applet.*;
+import java.awt.*;
+public class Example3 extends java.applet.Applet 
+{
+	public void paint(Graphics g)
+{
+	g.drawOval(10,10,200,100);
+}
+
+public void start()
+{
+	repaint();
+}
+}
