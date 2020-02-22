@@ -1,0 +1,131 @@
+/* Program to create model dialog box */
+
+import java.awt.*;
+import java.lang.*;
+import java.applet.*;
+import java.awt.event.*;
+
+public class DialogBx extends Applet
+{
+	public void init()
+	{
+		new FrameMenuTest("Menu Based Test");
+	}
+}
+
+class FrameMEnuListener implements ActionListener{
+	Change titleDialog dlg;
+	Frame fr;
+	public FrameMenuListener(Frame fr){
+		this.fr=fr;
+		dlg=new ChangeTitleDialog(fr,"Change the Title", true);
+	}
+	
+	public void actionPerformed(ActionEvent e)
+	{
+		String selection=e.getActionCommand();
+		if(selection.equals("Quit"))
+			fr.dispose();
+		if(selection.equals("Change Title dialog"))
+			dlg.show();
+	}
+}
+
+class FrameMenuTest extends Frame{
+	public FrameMenuTest(String title)
+	{
+		super(title);
+		MenuBar mbar=new MEnuBar();
+		setMenuBar(mbar);
+		Menu m=new Menu("File");
+		mbar.add(m);
+		FrameMenuListener listener=new FrameMEnuListener(this);
+		MenuItem item=new MeuItem("Change Title Dialog");
+		item.addActionListener(listener);
+		m.add(item);
+		m.addSeperator();
+		item=new MenuItem("Quit");
+		item.addActionListener(listener);
+		m.add(item);
+		pack();
+		setSize(400,300);
+		show();
+	}
+}
+
+class DialogTitleListener implements ActionListener
+{
+	Frame fr;
+	public DialogTitleListener(Frame fr)
+	{
+		this.fr=fr;
+	}
+	public void actionPerformed(ActionEvent e)
+	{
+		String selection=e.getActionCommand();
+		fr.setTitle(selection);
+	}
+}
+
+class DialogListener implements WindowListener{
+	Dialog dlg;
+	public DialogListener(Dialog dlg)
+	{
+		this.dlg=dlg;
+	}
+	public void windowClosing(WindowEvent w)
+	{
+		dlg.dispose();
+	}
+	public void windowOpened(WindowEvent w)
+	{
+	}
+	public void windowClosed(WindowEvent w)
+	{
+	}
+	public void windowconfined(WindowEvent w)
+	{
+	}
+	public void windowDeconfined(WindowEvent w)
+	{
+	}
+	public void windowActivated(WindowEvent w)
+	{
+	}
+	public void windowDeactivated(WindowEvent w)
+	{
+	}
+}
+
+class ChangeTitleDialog extends Dialog
+{
+	Frame fr;
+	public ChangeTitleDialog(Frame parent,String title,boolean is Model)
+	{
+		super(parent,title,isModel);
+		fr=parent;
+		setLayout(new GridLayout(3,2));
+		DialogTitleListener listener=new DialogTitleListener(fr);
+		Button b=new Button("Frame Title-1");
+		b.addActionListener(listener);
+		add(b);
+		b=new Button("Frame Title-2");
+		b.addActionListener(listener);
+		add(b);
+		b=new Button("Frame Title-3");
+		b.addActionListener(listener);
+		add(b);
+		b=new Button("Frame Title-4");
+		b.addActionListener(listener);
+		add(b);
+		b=new Button("Frame Title-5");
+		b.addActionListener(listener);
+		add(b);
+		b=new Button("Frame Title-6");
+		b.addActionListener(listener);
+		add(b);
+		addWindowListener(new DialogListener(this));
+		pack();
+		setSize(300,200);
+	}
+}
