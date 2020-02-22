@@ -1,0 +1,37 @@
+/* Java program incorporating basic event handling */
+
+
+import java.applet.*;
+import java.awt.*;
+public class Example7 extends java.applet.Applet 
+{
+	Button hiButton;
+	public void init()
+	{
+		hiButton=new Button("Click Me");
+		add(hiButton);
+	}
+	public boolean mouseEnter(Event e, int x, int y)
+	{
+		hiButton.setLabel("Go Away");
+		return true;
+	}
+	
+	public boolean mouseEnter(Event e, int x, int y)
+	{
+		hiButton.setLAbel("Stay Away");
+		return true;
+	}
+	public boolean action(Event e, Object what)
+	{
+		if(e.target==hiButton)
+		{
+			if(e.target.setLabel("Clicked");
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+}
