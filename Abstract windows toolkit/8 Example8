@@ -3,7 +3,7 @@
 
 import java.applet.*;
 import java.awt.*;
-public class Example7 extends java.applet.Applet 
+public class Example8 extends java.applet.Applet 
 {
 	Button hiButton;
 	public void init()
