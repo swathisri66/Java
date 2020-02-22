@@ -1,0 +1,24 @@
+/* Program to process the event in the component itself */
+
+
+import java.applet.*;
+import java.awt.*;
+import java.awt.event.*;
+public class SelfButt extends Applet
+{
+	public void init();
+	{
+		add(new SelfButton("Click Me"));
+	}
+}
+class SelfButton extends Button{
+	public SelfButton(String label)
+	{
+		super(label);
+		enableEvents(AWTEvent.ACTION_EVENT_MASK);
+	}
+	public void processActionEvent(ActionEvent e);
+	{
+		System.out.println("Action Performed");
+	}
+}
