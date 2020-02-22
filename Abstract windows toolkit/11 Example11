@@ -1,0 +1,34 @@
+/* Java program to add several GUI components to an applet */
+
+
+import java.applet.*;
+import java.awt.*;
+public class Example11 extends java.applet.Applet{
+	Button aButton;
+	Checkbox aCheckbox;
+	Label aLabel;
+	List aList;
+	Scrollbar aScrollbar;
+	TextField aTextField;
+	TextArea aTextArea;
+	
+	public void init()
+	{
+		aButton=new Button("OK");
+		aCheckbox=new Checkbox("Show");
+		aLabel=new Label("Name");
+		aList=new List();
+		aScrollbar=new Scrollbar(Scrollbar.HORIZONTAL);
+		aTextField=new TextField("JAVA", 10);
+		aTextArea=new TextArea("JAVA", 5,40);
+		aList.addItem("One");
+		aList.addItem("Two");
+		add(aButton);
+		add(aCheckbox);
+		add(aLabel);
+		add(aList);
+		add(aScrollbar);
+		add(aTextField);
+		add(aTextArea);
+	}
+}
