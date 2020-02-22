@@ -1,0 +1,22 @@
+/* program to demonstrate event delegation */
+
+
+import java.applet.*;
+import java.awt.*;
+import java.awt.event.*;
+public class EventDel extends Applet
+{
+	public void init()
+	{
+		Button b=new Button("Click Me");
+		add(b);
+		TestListener listener 0 new TestListener();
+		b.addActionListener(listener);
+	}
+}
+class TestListener implements ActionListener{
+	public void actionPerformed(ActionEvent event)
+	{
+		System.out.println("Action performed through event delegation");
+	}
+}
