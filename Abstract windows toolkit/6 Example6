@@ -1,0 +1,21 @@
+/* Java program to set background color */
+
+import java.applet.*;
+import java.awt.*;
+public class Example6 extends java.applet.Applet 
+{
+	static final String message="Hello World";
+	private Font font;
+	public void init()
+	{
+		font=new Font("Helvetica", Font.BOLD,48);
+		setBackground(Color.cyan);
+	}
+	
+	public void paint(Graphics g)
+	{
+		g.setColor(color.red);
+		g.setFont(font);
+		g.drawString(message,10,50);
+	}
+}
