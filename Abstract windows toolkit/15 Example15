@@ -1,0 +1,37 @@
+/* Program to create a menu with sub menu */
+
+
+import java.awt.*;
+public class SubMenu extends Frame{
+	MenuItem fileNew=new MenuItem("New");
+	MenuItem fileOpen=new MenuItem("Open");
+	MenuItem fileSave=new MenuItem("Save");
+	MenuItem fileExit=new MenuItem("Exit");
+	MenuItem printPrintPreview=new MenuIem("Print Preview");
+	MenuItem printPrintDocument=new MenuItem("Print Document"9;
+	Menu fileMenu=new Menu("File");
+	Menu printMenu=new Menu("Print");
+	MenuBar menubar=new MenuBar();
+	public SubMenu()
+	{
+		super("Sub MEnu Example");
+		fileMenu.add(fileNew);
+		fileMenu.add(fileOpen);
+		fileSave.setEnabled(false);
+		fileMenu.add(fileSave),
+		fileMenu.addSeperator();
+		fileMenu.add(fileExit);
+		fileMEnu.addSeperator();
+		printMenu.add(printPrintPreview);
+		printMenu.add(printPrintDocument);
+		fileMEnu.add(printMenu);
+		menubar.add(fileMenu);
+		setMenuBar(menubar);
+		setSize(new Dimension(400,300));
+		show();
+	}
+	public static void main(String[] args)
+	{
+		SubMenu sMenu=new SubMenu();
+	}
+}
