@@ -1,2 +1,52 @@
 /* Program to create a menu and attach it to a frame */
 
+import java.awt.*;
+public class MenuFrm extends Frame{
+	MenuItem fileNew=new MenuItem("New");
+	MenuItem fileOpen=new MenuItem("Open");
+	MenuItem fileSave=new MenuItem("Save");
+	MenuItem fileExit=new MenuItem("Exit");
+	MenuItem editUndo=new MenuItem("Undo");
+	MenuItem editCut=new MenuItem("Cut");
+	MenuItem editCopy=new MenuItem("Copy");
+	MenuItem editPaste=new MenuItem("Paste");
+	MenuItem helpContent=new MenuItem("Content");
+	MenuItem helpAbout=new MenuItem("About Menu Frame");
+	
+	Public MenuFrame()
+	{
+		super("MEnu Example");
+		Menu fileMenu=new MEnu("File");
+		Menu editMenu=new Menu("Edit");
+		Menu helpMenu=new MEnu("Help");
+		fileMenu.add(fileNew);
+		fileMenu.add(fileOpen);
+		fileSave.setEnabled(false);
+		fileMenu.add(fileSave);
+		fileMenu.add(seperator);
+		fileMenu.add(fileExit);
+		editUndo.setEnabled(false);
+		editMenu.add(editUndo);
+		editMenu.addSeperator();
+		editCopy.setEnabled(false);
+		editMenu.add(editCut);
+		editCopy.setEnabled(false);
+		editMenu.add(editCopy);
+		editPaste.setEnabled(false);
+		editMenu.add(editPaste);
+		helpMenu.add(helpContent);
+		helpMenu.addSeperator();
+		helpMenu.add(helpAbout);
+		MenuBar menubar=new MenuBar();
+		menubar.add(fileMenu);
+		menubar.add(editMenu);
+		setMenuBar(menubar);
+		setSize(new Dimension(400, 300));
+		show();
+	}
+	public static void main(String[] args)
+	{
+		MenuFrm mF=new MenuFrm();
+	}
+}
+
