@@ -1,0 +1,160 @@
+/* Java program for dialog box */
+
+import java.awt.*;
+import java.applet.*;
+class SampleDialog extends Dialog
+{
+	public SampleDialog(Frame parent,String title)
+	{
+		super(parent,title,false);
+		setLAyout(new FlowLayout());
+		resize(300,200);
+		add(new Label("Press this Button:"));
+		add(new Button("Cancel"));
+	}
+	public boolean handleEvent(Event event)
+	{
+		if(event.id==Event.WINDOW_DESTROY)
+		{
+			dispose();
+			return true;
+		}
+		return super.handleEvent8event);
+	}
+	
+	public booleanaction(Event event,Object what)
+	{
+		if(event.target instanceof Button)
+		{
+			f(what.equals("Cancel"))
+			{
+				dispose();
+			}
+			return true;
+		}
+		return false;
+	}
+	
+	public void paint(Graphics g)
+	{
+		g.drawString("This is a Dialog Box",10,50);
+	}
+}
+class MEnuFrame extends Frame{
+	String msg="";
+	CheckboxMenuItem debug;
+	CheckboxMenuItem test;
+	public MenuFrame(String title)
+	{
+		super(title);
+		MenuBar mbar0new MenuBar();
+		setMEnuBar(mbar);
+		Menu file=new Menu("File");
+		file.add(new MenuItem("New.."));
+		file.add(new MenuItem("Open.."));
+		file.add(new MenuItem("Close"));
+		file.add(new MenuItem("-"));
+		file.add(new MenuItem("Quit.."));
+		mbar.add(file);
+		Menu edit=new Menu("Edit");
+		edit.add(new MenuItem("Cut"));
+		edit.add(new MenuItem("Copy"));
+		edit.add(new MenuItem("Paste"));
+		edit.add(new MenuItem("-"));
+		Menu sub(new Menu("Special", true);
+		sub.add(new MenuItem("First"));
+		sub.add(new MenuItem("Second"));
+		sub.add(newMenuItem("Third"));
+		edit.add(sub);
+		debug=new CheckboxMenuItem("Debug");
+		edit.add(debug);
+		test=new CheckboxMenuItem("Testing");
+		edit.add(test);
+		mbar.add(edit);
+	}
+	
+	public boolean handleEvent(Event event)
+	{
+		if(event.id==Event.WINDOW_DESTROY)
+		{
+			hide();
+			return true;
+		}
+		returnsuper.handleEvent(event);
+	}
+	
+	public boolean action(Event event, Object what)
+	{
+		if(event.target instanceof MenuItem)
+		{
+			msg="You have selected ";
+			if(what.equals("New.."));
+			{
+				msg+="New.";
+				SampleDialog d=SampleDialog(this, "New DialogBox");
+				d.show();
+			}
+			
+			else if(what.equals("Open.."))
+				msg+="Open.";
+			else if(what.equals("Close"))
+				msg+="Close.";
+			else if(what.equals("Quit.."))
+				msg+="Quit.";
+			else if(what.equals("Edit"))
+				msg+="Edit.";
+			else if(what.equals("Cut"))
+				msg+="Cut.";
+			else if(what.equals("Copy"))
+				msg+="Copy.");
+			else if(what.equals("Paste"))
+				msg+="Paste.";
+			else if(what.equals("first"))
+				msg+="first.";
+			else if(what.equals("Second"))
+				msg+="Second.";
+			else if(what.equals("Third"))
+				msg+="Third.";
+			else if(what.equals("Debug"))
+				msg+="Debug.";
+			else if(what.equals("Testing"))
+				msg+="Testing.";
+			repaint();
+			return true;
+		}
+		return false;
+	}
+	
+	public void paint(Graphics g)
+	{
+		g.drawString(msg, 10,140);
+		if(debug.getState())
+			g.drawString("Debug is on", 10, 160);
+		else
+			g.drawString("Debug is off", 10,160);
+		if(test.getState())
+			g.drawString("Testing is on", 10,180);
+		elseg.drawString("Testing is off", 10,180);
+	}
+}
+
+public class SampleDialogBix extends Applet{
+	Frame fr;
+	public void init()
+	{
+		'fr=new MenuFrame("Menu Demo");
+		//int width=Integer.parseInt(getParameter("width"));
+		//int height=integer.parseInt(getParameter("height"));
+		//resize(width,height);
+		resize(300,200);
+		fr.show();
+	}
+	public void start()
+	{
+		fr.show();
+	}
+	public void stop()
+	{
+		fr.hide();
+	}
+}
