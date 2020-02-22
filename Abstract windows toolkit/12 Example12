@@ -1,0 +1,19 @@
+/* Java Program to arrange GUI components over an applet */
+
+
+import java.applet.*;
+import java.awt.*;
+public class Example12 extends java.applet.Applet
+{
+	Button aButton1;
+	Button aButton2;
+	
+	public void init()
+	{
+		aButton1=new Button("Button1");
+		aButton2=new Button("Button 2");
+		setLayout(new BorderLayout());
+		add("North",aButton1);
+		add("South",aButton2);
+	}
+}
