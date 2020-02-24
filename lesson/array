@@ -1,0 +1,19 @@
+// example program on arrays
+class Array1
+{
+  public static void main(String args[])
+  {
+    int x[]={34,66,78,89,45,22};    // index numbers are 0 to 5
+    System.out.println("number of values is x is "+x.length);  // 6
+    for (int c=0 ; c<x.length ; c++)
+    {
+       System.out.print(x[c]+"\t");
+    }
+    System.out.println();
+    // usage of enhanced for loop
+    for (int c : x)    // c reperesents each value of the array in every itteration
+    {
+       System.out.print(c+"\t");
+    }
+  }
+}
