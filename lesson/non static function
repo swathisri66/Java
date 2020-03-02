@@ -1,0 +1,20 @@
+/*	System.out.println(........);
+
+System  : is a class name present in java.lang package
+
+out	: is a predefined object of java.io.PrintStream class 
+	  it is present in as a static member in System class
+
+println() or print() : is a non-static function of java.io.PrintStream class
+
+*/
+
+class Sample
+{
+   public static void main(String args[])
+   {
+     int x=389;
+     System.out.println("x value is "+x);
+     System.out.printf("x value is %d ",x);
+   }
+}
