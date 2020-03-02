@@ -1,0 +1,27 @@
+class Sample
+{
+   int a=10;
+   static int b=100;
+   void change()
+   {
+      Sample obj=new Sample();
+      a=a+5;
+//      Sample.a=Sample.a+5;  
+      obj.a=obj.a+5;
+      b=b+5;
+      Sample.b=Sample.b+5;
+      obj.b=obj.b+5;
+   }
+   public static void main(String args[])
+   {
+      Sample obj=new Sample();
+//      System.out.println(a);   	// error
+//      System.out.println(Sample.a);   // error
+      System.out.println(obj.a);
+      System.out.println(b);
+      System.out.println(Sample.b);
+      System.out.println(obj.b);
+//      change(); // error
+      obj.change();
+   }
+}
