@@ -1,0 +1,109 @@
+/* Program to print area and perimeter of Circle for Given radius */
+
+class Circle
+{
+ public static void main(String args[])
+ {
+  double r = 12.5;
+  double area = Math.PI * r * r;
+  double peri = 2 * Math.PI * r;
+  System.out.println("Area of Circle = " + area);
+  System.out.println("Perimeter of Circle = " + peri);
+ } // main()
+} // class
+================================================
+/* Program to perform Arithmetic Operations on two numbers  */
+
+class Arithmetic
+{
+ public static void main(String args[])
+ {
+  int a = 100,b = 20;
+  int c = a + b;
+  System.out.println("Sum = " + c);
+  c = a - b;
+  System.out.println("Difference = " + c);
+  c = a * b;
+  System.out.println("Product = " + c);
+  c = a / b;
+  System.out.println("Division = " + c);
+  c = a % b;
+  System.out.println("Remainder = " + c);
+ } // main()
+} // class
+==================================================
+/* Program to check whether the given number is Even or Odd */
+
+class EvenOdd
+{
+ public static void main(String args[])
+ {
+  int n = 1000;
+  if(n % 2 == 0)
+    System.out.print(n + " is Even");
+  else
+    System.out.print(n + " is Odd");
+ } // main()
+} // class
+==================================================
+/* Program to print the Factorial of Given Number */
+
+class Factorial
+{
+ public static void main(String args[])
+ {
+  int n = 5,fact = 1;
+  for(int i=1;i<=n;i++)
+    fact = fact * i;
+  System.out.printf("Factorial of %d is : %d",n,fact);
+//  System.out.println("Factorial of " + n + " is : " + fact);
+ } // main()
+} // class
+==================================================
+/* Program to print the multiplication table of a given number */
+
+class TableDemo
+{
+ public static void main(String args[])
+ {
+  int n = 10;
+  System.out.println("Multiplication Table of " + n + " is : ");
+  for(int i=1;i<=10;i++)
+    System.out.printf(" %d X %d = %d \n",n,i,n*i);
+ } // main()
+} // class
+=================================================
+/* Program to print the multiplication table of a given number */
+
+class TableDemo
+{
+ public static void main(String args[]) throws Exception
+ {
+  int n = 5;
+  for(int x = 1;x<=n;x++)
+  {
+   System.out.println("Multiplication Table of " + x + " is : ");
+   for(int i=1;i<=10;i++)
+     System.out.printf(" %d X %d = %d \n",x,i,x*i);
+   System.out.println("\nPlease wait to continue......\n ");
+   Thread.sleep(3000); // Blocks program execution for 3 seconds
+  } // for
+ } // main()
+} // class
+================================================
+Command-line Arguments : These are the arguments that are passed to the main() method of class from the command-line. These values are assigned to the "args" variable of main(). By calling the property "args.length",we can find the size of array and access the array elements.
+Eg:
+/* Program to implement command-line arguments */
+
+class CommandDemo1
+{
+ public static void main(String args[])
+ {
+  System.out.println("The Arguments Received are : ");
+  int n = args.length;
+  for(int i=0;i<n;i++)
+    System.out.printf("args[%d] = %s \n",i,args[i]);
+  System.out.println("No. of Arguments : " + n);
+ } // main()
+} // class
+=================================================
