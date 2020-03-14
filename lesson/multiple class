@@ -1,0 +1,167 @@
+/* Creating multiple Java classes each with its own main() */
+
+class A
+{
+ public static void main(String args[])
+ {
+  System.out.println("Inside main of class A");
+ } // main()
+} // class
+
+class B
+{
+ public static void main(String args[])
+ {
+  System.out.println("Inside main of class B");
+ } // main()
+} // class
+
+class C
+{
+ public static void main(String args[])
+ {
+  System.out.println("Inside main of class C");
+ } // main()
+} // class
+
+=> Suppose that this file is saved as MultiMain.java
+=> Compile the file as :
+javac MultiMain.java
+This command creates: A.class,B.class and C.class files
+=> If we want to execute the main() method of class A, run the file as:
+java A
+=> If we want to execute the main() method of class B, run the file as:
+java B
+=> If we want to execute the main() method of class C, run the file as:
+java C
+==================================================
+Constructors in Java :
+=> A constructor is a special member function of a class which is used to initialise objects(non-static data members). The constructor name is same as class-name and executes automatically while the object is being created.
+
+=> A constructor can be defined with parameters(parameterised constructor) and without parameters(non-parameterised constructor) but cannot have a return value. The constructor created by the JVM by default is the default constructor. 
+
+=> If required, constructors can be overloaded. The difference between the overloaded constructors lies in the no. of parameters we pass or their datatypes. Constructor overloading is one of the implementations of static or compile-time Polymorphism.
+=================================================
+java filename
+=> JVM checks whether the specified ".class" file is available or not.
+=> If available, it checks whether the class has main() method or not.
+=> If available, it loads the main() method into memory.
+=> Inside main(), we create object for the class. Now, the class members are loaded into memory. This memory is called "Object".
+=> Then JVM checks whether the object has any constructor or not. If available, it will load and executes it. If not, it creates a default constructor. The duty of the constructor is used to assign uninitialised variables with "default values".
+NOTE : Default values are assigned to "data members" only, but not for "Local variables".
+==================================================
+Sample s = new Sample();
+Sample => ".class" file
+s => reference variable
+new => Operator(DMA)
+Sample() => Constructor
+==================================================
+/* Implementing non-parameterised constructor */
+
+class Account
+{
+ int accno;
+ double balance;
+ Account()
+ {
+  System.out.println("Inside constructor");
+  accno = 201;
+  balance = 10000.00;
+ }
+ void showBalance()
+ {
+  System.out.println("Balance in " + accno + " is : " + balance);
+ }
+} // class
+
+class ConDemo1
+{
+ public static void main(String args[])
+ {
+  Account a1 = new Account();
+  a1.showBalance();
+ } // main()
+} // class
+================================================
+/* Implementing parameterised constructor */
+
+class Account
+{
+ int accno;
+ double balance;
+ Account(int x,double y)
+ {
+  accno = x;
+  balance = y;
+ }
+ void showBalance()
+ {
+  System.out.println("Balance in " + accno + " is : " + balance);
+ }
+} // class
+
+class ConDemo2
+{
+ public static void main(String args[])
+ {
+  Account a1 = new Account(201,10000.00);
+  Account a2 = new Account(202,20000.00);
+  Account a3 = new Account(203,30000.00);
+  a1.showBalance();
+  a2.showBalance();
+  a3.showBalance();
+ } // main()
+} // class
+============================================
+/* Program to implement constructor overloading */
+
+class Rectangle
+{
+ int l,b;
+ Rectangle()
+ {
+  l = 10;
+  b = 20;
+ }
+ Rectangle(int x)
+ {
+  l = x;
+  b = x;
+ }
+ Rectangle(int x,int y)
+ {
+  l = x;
+  b = y;
+ }
+ void area()
+ {
+  System.out.println("Area of Rectangle : " + l*b);
+ }
+} // class
+
+class ConDemo3
+{
+ public static void main(String xyz[])
+ {
+  Rectangle r1 = new Rectangle(15);
+  Rectangle r2 = new Rectangle(15,30);
+  Rectangle r3 = new Rectangle();
+  r1.area();
+  r2.area();
+  r3.area();
+  System.out.println("r1 = " + r1);
+  System.out.println("r2 = " + r2);
+  System.out.println("r3 = " + r3);
+  Rectangle r4 = r2; // Copy Constructor
+  System.out.println("r4 = " + r4);
+  r4.area();
+  r4 = r1;
+  System.out.println("r4 = " + r4);
+  r4.area();
+ } // main()
+} // class
+
+NOTE : 
+1) Copying the address of one object into another is called "copy constructor".
+2) An object can have multiple references,but a reference can hold the address of only one object at a time.
+=============================================
