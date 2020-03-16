@@ -1,0 +1,136 @@
+Polymorphism in Java :
+Poly => many
+Morphism => forms
+1) Static (or) Compile-time Polymorphism => Implemented through overloading
+2) Dynamic (or) Run-Time Polymorphism => Implemented through overriding
+
+Method Overloading : Defining multiple methods with same name but with different functionalities is called "Method Overloading". The methods with same name are called overloaded methods. The difference between the overloaded methods will be either in the no. of parameters or their datatypes, but all the methods will have the same type. Eg: System.out.print(),System.out.println().
+================================================
+/* Program-1 on method overloading */
+
+class Sample
+{
+ void add()
+ {
+  int x = 100,y = 200;
+  System.out.println("Sum = " + (x + y));
+ }
+ void add(int x,int y)
+ {
+  System.out.println("Sum = " + (x + y));
+ }
+ void add(double x,double y)
+ {
+  System.out.println("Sum = " + (x + y));
+ }
+ void add(String x,String y)
+ {
+  System.out.println("Concatenated String = " + (x + y));
+ }
+ void add(int x,int y,int z)
+ {
+  System.out.println("Sum = " + (x + y + z));
+ }
+} // end of class
+
+class PolyDemo1
+{
+ public static void main(String args[])
+ {
+  Sample s = new Sample();
+  s.add("hello","world");
+  s.add(12.25,22.5);
+  s.add(12,24,36);
+  s.add();
+  s.add(12,24);
+ } // main()
+} // class
+==============================================
+/* Program-2 on method overloading */
+
+class Sample
+{
+/* void print(int x)
+ {
+  System.out.println("int x = " + x);
+ } */
+/* void print(long x)
+ {
+  System.out.println("long x = " + x);
+ } */
+ void print(float x)
+ {
+  System.out.println("float x = " + x);
+ }
+ void print(char x)
+ {
+  System.out.println("char x = " + x);
+ }
+} // end of class
+
+class PolyDemo2
+{
+ public static void main(String args[])
+ {
+  Sample s = new Sample();
+  s.print(100);
+ } // main()
+} // class
+================================================
+/* Program-3 on method overloading */
+
+class Sample
+{
+/* void print(int x,int y)
+ {
+  System.out.println("int x = " + x);
+  System.out.println("int y = " + y);
+ } */
+ void print(int x,float y)
+ {
+  System.out.println("int x = " + x);
+  System.out.println("float y = " + y);
+ }
+ void print(float x,int y)
+ {
+  System.out.println("float x = " + x);
+  System.out.println("int y = " + y);
+ }
+} // end of class
+
+class PolyDemo3
+{
+ public static void main(String args[])
+ {
+  Sample s = new Sample();
+  s.print(100,200);
+ } // main()
+} // class
+============================================
+static and non-static members of a class : 
+
+=> Any member of a class declared with the keyword is a "static" member. The other members are called "non-static" members.
+
+Why Static?
+1) If we want to make any method of class loaded along with main() method, it is declared as "static".
+2) If we want to make any data member shared between several objects, it is declared as "static".
+
+What is the duty of JVM when we ask to run a Java file:
+java filename
+=> JVM checks whether the specified ".class" file is available or not. If not available, it displays an error
+=> If available, then JVM checks whether the class has any static members available or not. If available, all the static members are loaded into memory(including main()). This memory created for the static members of a class is called "Context". Now, JVM starts running the main() method.
+=> In main(), we create object for the class. Now, all the non-static data members are loaded into memory. This memory created for the non-static data members of a class is called "object".
+=> Now JVM loads and executes the constructor whose purpose is to initialize the data members.
+=> Finally, the addresses of both context and object are assigned to the "reference" variable.
+
+NOTE :
+1) A class can have multiple objects,but context can be created only once.
+2) The static data members of a class are called "class variables" while the non-static data members of a class are called "instance variables".
+------------------------------------------
+Accessing the members of a class within the class:
+=> A static member of a class can access only static members directly. To access the non-static members, it needs object(Reference).
+=> A non-static member of a class can access both static and non-static members directly.
+------------------------------------------
+Accessing the members of a class outside the class:
+=> A static member of a class is accessed outside the class through "class-name" while the non-static members through "reference".
+-------------------------------------------
