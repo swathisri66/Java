@@ -1,0 +1,235 @@
+Arrays in Java :
+Implementing 1-D arrays :
+Syntax-1 :
+datatype arr[];
+arr = new datatype[size];
+Eg:
+int a[];
+a = new int[n]; n => size requested by the user
+
+Syntax-2 :
+datatype arr[] = new datatype[size];
+Eg:
+int a[] = new int[n];
+
+Syntax-3 :
+datatype arr[] = {list-of-values};
+Eg:
+int a[] = {10,20,30,40,50};
+for(int i=0;i<a.length;i++)
+  S.o.p(a[i]);
+=============================================
+/* Program to read and print an array. Also, print the no. of even and odd numbers in the array */
+
+import java.util.Scanner;
+
+class ArrayDemo
+{
+ public static void main(String args[])
+ {
+  Scanner sc = new Scanner(System.in);
+  System.out.print("Enter size of array : ");
+  int n = sc.nextInt();
+  int a[] = new int[n];
+  int i,even_count = 0,odd_count = 0;
+  for(i=0;i<n;i++)
+  {
+   System.out.print("Enter an array value : ");
+   a[i] = sc.nextInt();
+   if(a[i] % 2  == 0)
+    even_count++;
+   else
+    odd_count++;
+  }
+  System.out.println("The Array Elements are : ");
+  for(i=0;i<n;i++)
+   System.out.print("   " + a[i]);
+  System.out.println("\n\n No. of Even Numbers : " + even_count);
+  System.out.println("\n\n No. of Odd Numbers : " + odd_count);
+ } // main()
+} // class
+====================================================
+Implementing 2-D arrays :
+Syntax-1 :
+ datatype arr[][];
+ arr = new datatype[row][column];
+Eg:
+ int a[][];
+ a = new int[3][3];
+
+Syntax-2 :
+ datatype arr[][] = new datatype[row][column];
+Eg:
+ int a[][] = new int[3][3];
+
+Syntax-3 :
+ datatype arr[][] = new datatype[row][];
+ arr[0] = new datatype[column];
+ arr[1] = new datatype[column];
+....
+Eg-1:
+int a[][] = new int[3][];
+a[0] = new int[3];	0 => X X X
+a[1] = new int[3];	1 => X X X
+a[2] = new int[3];	2 => X X X  => 3x3
+
+Eg-2:
+int a[][] = new int[3][];
+a[0] = new int[3];	0 => X X X
+a[1] = new int[2];	1 => X X
+a[2] = new int[1];	2 => X	     => Jagged arrays
+
+Jagged Array : A 2-d array with variable-sized rows. The size of each row is different
+------------------------------------------------------
+Initializing a 2-D array :
+Syntax :
+ datatype arr[][] = { {row-0}, {row-1}, ....};
+Eg-1:
+ int a[][] = {{1,2,3}, {4,5,6}, {7,8,9}};
+ System.out.println("Elements of Matrix A : \n");
+ for(int i=0;i<3;i++)
+ {
+   for(int j=0;j<3;j++)
+    System.out.print("   " + a[i][j]);
+   System.out.println("\n");
+ }
+
+Eg-2:
+  int a[][] = {{1},{2,3},{4,5,6}}; // Jagged Array
+  System.out.println("Elements of Matrix A : \n");
+  for(int i=0;i<3;i++)
+  {
+    for(int j=0;j<a[i].length;j++)
+      System.out.print("   " + a[i][j]);
+    System.out.println("\n");
+  }
+=================================================
+/* Program to read and print a matrix */
+
+import java.util.Scanner;
+
+class MatrixDemo
+{
+ public static void main(String args[])
+ {
+  Scanner sc = new Scanner(System.in);
+  int row,column,i,j;
+  System.out.print("Enter row-size of matrix A : ");
+  row = sc.nextInt();
+  System.out.print("Enter column-size of matrix A : ");
+  column = sc.nextInt();
+  int a[][] = new int[row][column];
+
+  // Read Values into Matrix
+  for(i=0;i<row;i++)
+  {
+   for(j=0;j<column;j++)
+   {
+    System.out.printf("Enter value for a[%d][%d] : ",i,j);
+    a[i][j] = sc.nextInt();
+   }
+  }
+
+  // Print the Matrix Elements
+  System.out.println("The Entered Matrix is : \n");
+  for(i=0;i<row;i++)
+  {
+   for(j=0;j<column;j++)
+     System.out.print("   " + a[i][j]);
+   System.out.println("\n");
+  }
+
+  // Print the Matrix Transpose
+  System.out.println("The Transpose Matrix is : \n");
+  for(i=0;i<column;i++)
+  {
+   for(j=0;j<row;j++)
+     System.out.print("   " + a[j][i]);
+   System.out.println("\n");
+  } // for
+ } // main()
+} // class
+====================================================
+1-D Arrays :
+=> Write a program to print the no. of prime numbers in an array
+=> Write a program to print the Biggest and Smallest numbers in an array
+
+2-D Arrays :
+=> Write a program to print the no. of prime numbers in a matrix
+=> Write a program to print the Biggest and Smallest numbers in a matrix
+=> Write a program to check whether the given matrix is Identity or not.
+====================================================
+Strings to Java : Strings are represented as classes in Java. They include:
+== java.lang.String class
+== java.lang.StringBuilder class
+== java.lang.StringBuffer class
+
+java.lang.String class :
+=> A string class object can be created as below:
+1) String str;
+str = new String("Welcome");
+
+2) String str = new String("Welcome");
+
+3) String str = "welcome";
+
+4) char ch[] = {'w','e','l','c','o','m','e'};
+String str = new String(ch);
+================================================
+Methods in String class:
+
+=> length() : This method returns the length of given string
+Eg: String str = "welcome";
+ S.o.p(str); => 7
+
+=> toUpperCase() : This method converts the given string into uppercase.
+Eg: String str = "welcome";
+ S.o.p(str.toUpperCase()); => "WELCOME"
+
+=> toLowerCase() : This method converts the given string into lowercase.
+Eg: String str = "WELCOME";
+ S.o.p(str.toLowerCase()); => "welcome"
+
+=> trim() : This method removes the leading and trailing spaces of a given string.
+Eg: String str = "    hello    world    ";
+S.o.p(str.trim()); => "hello    world"
+
+=> equals() : This method compares the two given strings s1 and s2 and returns true if they are same;false otherwise
+Eg: String str = "hello";
+ S.o.p(str.equals("hello")); => true
+ S.o.p(str.equals("hai")); => false
+ S.o.p(str.equals("HELLO")); => false
+
+=> equalsIgnoreCase() : This method is same as equals() but case is ignored
+Eg: String str = "hello";
+ S.o.p(str.equalsIgnoreCase("hello")); => true
+ S.o.p(str.equalsIgnoreCase("hai")); => false
+ S.o.p(str.equalsIgnoreCase("HELLO")); => true
+
+=> compareTo() : This method is same as strcmp() in C/C++
+Eg:
+/* Program to sort a set of given strings */
+
+class StringDemo
+{
+ public static void main(String args[])
+ {
+  String str[] = {"Python","Java","C","Oracle","C++","PHP","C#"};
+  int i,j,n = str.length;
+  for(i=0;i<n-1;i++)
+  {
+   for(j=i+1;j<n;j++)
+   {
+    if(str[i].compareTo(str[j]) > 0) // if(strcmp(s1,s2) > 0) => In C/C++
+    {
+     String temp = str[i];
+     str[i] = str[j];
+     str[j] = temp;
+    }
+   }
+  }
+  System.out.println("Strings in Sorted Order : ");
+  for(i=0;i<n;i++)
+   System.out.println(str[i]);
+ } // main()
+} // class
