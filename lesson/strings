@@ -1,0 +1,98 @@
+=> indexOf() : This method returns the position of first occurence of a character in a given string.
+Eg:
+ String str = "welcome";
+ S.o.p(str.indexOf('e')); => 1
+ S.o.p(str.indexOf('E')); => -1
+ S.o.p(str.indexOf('e',4)); => 6
+
+=> lastIndexOf() : This method returns the position of last occurence of a character in a given string.
+Eg:
+ String str = "welcome";
+ S.o.p(str.lastIndexOf('e')); => 6
+ S.o.p(str.lastIndexOf('E')); => -1
+ S.o.p(str.lastIndexOf('e',4)); => 1
+
+=> charAt() : This method returns the character at the given index.
+Eg:
+ String str = "welcome";
+ S.o.p(str.charAt(4)); => 'o'
+ S.o.p(str.charAt(14)); => Error
+===========================================================
+Limitation of String class : String class is used to create immutable strings i.e the strings created using this class cannot be modified
+Eg:
+class StrDemo
+{
+ public static void main(String args[])
+ {
+  String str = "welcome";
+  String s = str.toUpperCase();
+  System.out.println(str);
+  System.out.println(s);
+ } // main()
+} // class
+----------------------------------------
+StringBuffer and StringBuilder classes: These classes are used to create mutable strings. The strings can be modified when required.
+
+1) StringBuilder sb;
+ sb = new StringBuilder("welcome");
+2) StringBuilder sb = new StringBuilder("welcome");
+
+3) StringBuffer sb;
+ sb = new StringBuffer("welcome");
+4) StringBuffer sb = new StringBuffer("welcome");
+
+Methods of StringBuider and StringBuffer classes:
+
+=> append() : This method appends the given string to the specified string.
+Eg: StringBuffer sb = new StringBuffer("welcome");
+ S.o.p(sb); => "Welcome"
+ sb.append(" to APEC");
+ S.o.p(sb); => "Welcome to APEC"
+
+=> insert() : This method inserts the given value at the given offset of the specified string
+Eg: StringBuffer sb = new StringBuffer("welcome");
+ S.o.p(sb); => "welcome"
+ sb.insert(3,"hello");
+ S.o.p(sb); => "welhellocome"
+
+=> delete(start,end) : This method deletes the characters from start index upto end index. The character at the end index cannot be deleted.
+Eg: StringBuffer sb = new StringBuffer("welcome");
+ S.o.p(sb); => "welcome"
+ sb.delete(2,5);
+ S.o.p(sb); => "weme"
+.........
+
+NOTE : The main difference between the StringBuffer and StringBuilder classes is that StringBuffer is thread-safe while StringBuilder is not thread-safe.
+==================================================
+String class => Thread-safe,but Immutable
+StringBuffer class => Thread-safe and Mutable
+StringBuilder class => Not thread-safe,but Mutable
+==================================================
+Inheritance in Java : 
+=> A class "getting the properties of" another class is called Inheritance. If we want to make the members of a class directly available to another class,we can use inheritance.
+
+=> The class which is providing the properties is called the "Base class" or "Parent class" or "Super class" and the class which is getting the properties is called the "Derived class" or "Child Class" or "Sub-class". 
+
+=> In any type of Inheritance, it is important to note that the child can access the properties of its parent,but a parent cannot access the properties of its child.
+
+=> Inheritance in Java can be implemented as below:
+
+class Super
+{
+ ====
+}
+
+class Sub extends Super
+{
+ ====
+}
+
+=> Here, the keyword "extends" means "getting the properties from". Also, with extends keyword,we can specify only one class-name and hence Java does not support "Multiple Inheritance" with classes.
+----------------------------------------------------
+=> The following are the various types of Inheritance that can be implemented.
+1) Single Inheritance
+2) Multi-level Inheritance
+3) Multiple Inheritance
+4) Hierarchical Inheritance
+5) Multi-path or Hybrid Inheritance
+(See Figure)
