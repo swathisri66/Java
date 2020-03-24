@@ -1,0 +1,137 @@
+Packages in Java : 
+== Collection of built-in classes and interfaces
+== Built-in packages and user-defined packages 
+
+Creating user-defined packages in Java:
+1) Create a Java class as below:
+
+/* save this file as MyClass.java */
+
+package mypack;
+
+public class MyClass
+{
+ public int x = 100;
+ public void welcome()
+ {
+  System.out.println("Inside welcome");
+ }
+} // class
+
+=> Compile the file as :
+javac -d . MyClass.java
+=> This command creates a folder "mypack" and copies the "MyClass.class" file automatically inside it.
+
+2) Create a Java class that import the above class as below:
+
+/* Implementing user-defined packages */
+
+import mypack.MyClass;
+import java.util.Date;
+
+class PackDemo1
+{
+ public static void main(String args[])
+ {
+  MyClass c = new MyClass();
+  System.out.println("x = " + c.x);
+  c.welcome();
+  Date d = new Date();
+  System.out.println("Today's Date : " + d);
+ } // main()
+} // class
+=> Compile and run the program.
+javac PackDemo1.java
+java PackDemo1
+---------------------------------------------
+Importing packages into our program:
+Syntax-1 :
+import package-name.class-name;
+Eg:
+import java.awt.Graphics;
+import java.util.Date;
+=> This import statement is used when to want to import specific members of a package.
+
+Syntax-2:
+import package-name.*;
+Eg:
+import java.sql.*;
+import javax.servlet.*;
+=> This import statement is used when we want to import multiple members from a package.
+------------------------------------------------
+Creating a sub-class for a package member:
+
+1) Create a parent class under "mypack" folder as below:
+
+/* save this file as MySquare.java */
+package mypack;
+
+public class MySquare
+{
+ public int l = 10;
+ public void area1()
+ {
+  System.out.println("Area of Square = " + l*l);
+ }
+} // class
+=> Compile the class as :
+javac -d . MySquare.java
+
+2) Create a Java class thts inherits the above class as below:
+
+/* Creating a child class for a package member */
+
+import mypack.MySquare;
+
+class MyRectangle extends MySquare
+{
+ int b = 20;
+ void area2()
+ {
+  System.out.println("Area of Rectangle = " + l*b);
+ }
+} // class
+
+class PackDemo2
+{
+ public static void main(String args[])
+ {
+  MyRectangle r = new MyRectangle();
+  r.area1();
+  r.area2();
+ } // main()
+} // class
+=> Compile and run the program
+================================================
+Creating a multi-level package: 
+
+1) Create a Java class as below:
+
+/* Save this file as Class1.java */
+package pack1.pack2.pack3.pack4.pack5;
+
+public class Class1
+{
+ public int x = 100;
+ public void welcome()
+ {
+  System.out.println("Welcome to Packages");
+ }
+} // class
+=> Compile the file as :
+javac -d . Class1.java
+
+2) Create a Java class that imports the above class as below:
+import pack1.pack2.pack3.pack4.pack5.Class1;
+class PackDemo3
+{
+ public static void main(String args[])
+ {
+  Class1 c = new Class1();
+  System.out.println("x = " + c.x);
+  c.welcome();
+ } // main()
+} // class
+=> Compile and run the program
+=============================================
+Access Modifiers in Java:(See Figure)
