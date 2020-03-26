@@ -1,0 +1,200 @@
+classes    : fully-implemented structures
+interfaces : fully-unimplemented structures
+abstract classes : Partially-implemented and partially-unimplemented structures
+----------------------------------------------
+Syntax:
+abstract class class-name
+{
+ implemented methods;
+ unimplemented (or) abstract methods;
+}
+
+class class-name extends abstract-class
+{
+ // must provide bodies for the abstract methods of an abstract class 
+}
+---------------------------------------------
+/* Program to implement abstract classes */
+
+abstract class Abs1
+{
+ void fun1()
+ {
+  System.out.println("Inside fun1 of Abs1");
+ }
+ void fun2()
+ {
+  System.out.println("Inside fun2 of Abs1");
+ }
+ abstract void fun3();
+ abstract void fun4();
+} // class
+
+class A extends Abs1
+{
+ void fun3()
+ {
+  System.out.println("Inside fun3 of Abs1");
+ }
+ void fun4()
+ {
+  System.out.println("Inside fun4 of Abs1");
+ }
+ void funA()
+ {
+  System.out.println("Inside funA of A");
+ }
+} // class
+
+class AbsDemo1
+{
+ public static void main(String args[])
+ {
+  A a1 = new A();
+  a1.fun1();
+  a1.fun2();
+  a1.fun3();
+  a1.fun4();
+  a1.funA();
+ } // main()
+} // class
+-------------------------------
+NOTE : We can create reference for an abstract class,but not object. To create a reference, ".class" file is required. To create an objecct, "class" is required. For the reference of an abstract class,we can assign object of the class which extends it.
+
+Abs1 s1 = new A();
+s1.fun1();
+s1.fun2();
+s1.fun3();
+s1.fun4();
+s1.funA(); => Error
+-------------------------------
+NOTE : The class which extends an abstract class or implements an interface must provide bodies for their abstract methods. If it does not want to implement them, it must also be declared as an abstract class.
+-------------------------------
+/* Program-2 on abstract classes */
+
+interface Xyz
+{
+ public void funX();
+ public void funY();
+}
+
+abstract class X implements Xyz
+{
+ public void funY()
+ {
+  System.out.println("Inside funY of Xyz");
+ }
+ abstract void funZ();
+} // class
+
+class Y extends X
+{
+ public void funX()
+ {
+  System.out.println("Inside funX of Xyz");
+ }
+ void funZ()
+ {
+  System.out.println("Inside funZ of X");
+ }
+} // class
+
+class AbsDemo2
+{
+ public static void main(String args[])
+ {
+  Y y1 = new Y();
+  y1.funX();
+  y1.funY();
+  y1.funZ();
+ } // main()
+} // class
+--------------------------------------------
+/* Program-3 abstract classes */
+
+abstract class Abs1
+{
+ void fun1()
+ {
+  System.out.println("Inside fun1 of Abs1");
+ }
+ abstract void fun2();
+} // class
+
+abstract class A extends Abs1
+{
+ void fun3()
+ {
+  System.out.println("Inside fun3 of A");
+ }
+ abstract void fun4();
+} // class
+
+class B extends A
+{
+ void fun2()
+ {
+  System.out.println("Inside fun2 of Abs1");
+ }
+ void fun4()
+ {
+  System.out.println("Inside fun4 of A");
+ }
+} // class
+
+class AbsDemo3
+{
+ public static void main(String args[])
+ {
+  B b1 = new B();
+  b1.fun1();
+  b1.fun2();
+  b1.fun3();
+  b1.fun4();
+ } // main()
+} // class
+------------------------------------------------
+NOTE : An abstract class cannot be necessarily partially-implemented nor partially unimplemented. If can be either fully-implemented or fully-unimplemented.
+=> All the Below declarations are valid.
+
+abstract class Abs1
+{
+ void fun1(){===}
+ abstract void fun2();
+}
+
+abstract class Abs1
+{
+ void fun1(){===}
+ void fun2(){===}
+}
+
+abstract class Abs1
+{
+ abstract void fun1();
+ abstract void fun2();
+}
+------------------------------------------------
+Errors:
+== Syntactical(Compile-time) Errors
+== RunTime Errors
+== Semantical(Logical) Errors
+------------------------------------------------
+Exception Handling:
+
+=> Exceptions are the classes whose objects were created when a Logical Error occurs. Whenever a logical error occurs in a program, the class which represents that logical error, its object is created and sent to JVM. Since JVM does not know how to handle that object, the program is terminated.
+
+=> Exception handling is the process of making the Exception class object not reaching JVM.
+
+=> The super class of all exception classes is the "java.lang.Throwable" class. This class has two sub-classes:Exception and Error. Any class whose name ends with Exception is a sub-class of Exception class and any class whose name ends with Error is a sub-class of Error class.
+
+=> Exception Handling in OOP Languages is implemented through try-catch blocks. The statements that are proven to generate logical errors are defined inside a try block. If a logical error occurs, it must be handled in the corresponding catch block. This can be shown as below:
+
+try{
+ ====
+}
+catch(...){
+ ====
+}
+=> A try block may be defined to generate several logical errors. To handle each logical error, a separate catch block will be created.
+
