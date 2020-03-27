@@ -1,0 +1,48 @@
+// program to add and multiply two complex number   4+6i    3+8i     7+14i
+#include <iostream>
+using namespace std;
+class Complex_Number
+{
+	float real, img;
+	public:
+		void get_complex_number()
+		{
+			cout<<"\n enter values for real and img ";
+			cin>>real>>img;
+		}
+		void show_complex_number()
+		{
+			cout<<"\n "<<real<<" + "<<img<<"i";
+		}
+		Complex_Number operator+(Complex_Number t)
+		{
+			Complex_Number res;	// res is a local object containing real and img in it
+			res.real = real + t.real;
+			res.img = img + t.img;
+			return res;      // res object (containint real and img) is returned
+		}
+		
+		Complex_Number operator*(Complex_Number t)
+		{
+			Complex_Number res;	// res is a local object containing real and img in it
+			res.real = (real * t.real) +  (img * t.img * -1);
+			res.img = (real * t.img) + (t.real * img);
+			return res;      // res object (containint real and img) is returned
+		}
+		
+};
+int main()
+{
+	Complex_Number obj1, obj2, obj3, obj4;
+	obj1.get_complex_number();
+	obj2.get_complex_number();
+	obj3=obj1+obj2;        //   obj3=obj1.operator+(obj2);
+	obj4=obj1*obj2;        //   obj4=obj1.operator*(obj2);
+	obj1.show_complex_number();
+	obj2.show_complex_number();
+	cout<<"\n the sum of complex numbers is ";
+	obj3.show_complex_number();
+	cout<<"\n the product of complex numbers is ";
+	obj4.show_complex_number();
+}
+
