@@ -1,0 +1,41 @@
+/* binary operator overloading
+	In binary operator overloading we use 2 operands (ex: ob1+ob2)
+	the first operand will call the opreator overloading function
+	and the second operand will be passed as argument into that function
+	ie., ob3=ob1+ob2;   --> internally taken as    ob3=ob1.operator+(ob2);
+	So, here, the operator function will return a value (however it is not compulsory)   */
+	
+#include <iostream>
+using namespace std;
+class Sample
+{
+	int x,y;	// when nothing is indicated, the default access specifier is 'private'
+	public:
+		void get_values()
+		{
+			cout<<"\n enter values for x and y ";
+			cin>>x>>y;
+		}
+		void show_values()
+		{
+			cout<<"\n x value is "<<x<<" y value is "<<y;
+		}
+		Sample operator+(Sample t)
+		{
+			Sample res;		// res is a local object containing x and y in it
+			res.x = x + t.x;
+			res.y = y + t.y;
+			return res;      // res object (containint x and y) is returned
+		}
+};
+int main()
+{
+	Sample obj1, obj2, obj3;
+	obj1.get_values();
+	obj2.get_values();
+	obj3=obj1+obj2;        //   obj3=obj1.operator+(obj2);
+	obj1.show_values();
+	obj2.show_values();
+	obj3.show_values();
+}
+
