@@ -1,0 +1,64 @@
+// program to add length objects (represented by feet and inches)
+#include <iostream>
+using namespace std;
+class Length
+{
+	private:
+		int ft, in;
+	public:
+		void get_length()
+		{
+			cout<<"\n enter values for feet and inches ";
+			cin>>ft>>in;
+		}
+		void show_length()
+		{
+			cout<<"\n "<<ft<<" Feet, "<<in<<" Inches";
+		}
+		Length operator+(Length t)
+		{
+			Length res;
+			res.ft = ft + t.ft;
+			res.in = in + t.in;
+			if (res.in>=12)
+			{
+				res.ft=res.ft+1;
+				res.in=res.in-12;
+			}
+			return res;
+		}
+		int operator>(Length t)
+		{
+			return (ft*12+in > t.ft*12+t.in) ? 1 : 0;
+		}
+		int operator<(Length t)
+		{
+			return (ft*12+in < t.ft*12+t.in) ? 1 : 0;
+		}
+		int operator==(Length t)
+		{
+			return (ft*12+in == t.ft*12+t.in) ? 1 : 0;
+		}
+};
+int main()
+{
+	Length table1, table2, table3, table4, table5;
+	table1.get_length();
+	table2.get_length();
+	table3.get_length();
+	table4.get_length();
+	table5=table1+table2+table3+table4;
+//	internally taken as --> table5=table1.operator+(table2.operator+(table3.operator+(table4)));
+	table1.show_length();
+	table2.show_length();
+	table3.show_length();
+	table4.show_length();
+	table5.show_length();
+	if (table1>table2)
+		cout<<"first table is big";
+	else if (table1<table2)
+		cout<<"second table is big";
+	else
+		cout<<"both tables are of same length";
+}
+
