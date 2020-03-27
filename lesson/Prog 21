@@ -1,0 +1,38 @@
+// program for demonstrating unary operator overloading (++)
+#include <iostream>
+using namespace std;
+class Emp
+{
+	private:
+		int empno;
+		char ename[20];
+		long int sal;
+	public:
+		void get_emp_data()
+		{
+			cout<<"\n enter employee_id, emp name and salary  ";
+			cin>>empno>>ename>>sal;
+		}
+		void show_emp_data()
+		{
+			cout<<"\n\n employee_id is "<<empno;
+			cout<<"\n emp name  is   "<<ename;
+			cout<<"\n emp salary is  "<<sal;
+		}
+		void operator++()
+		{
+			sal=sal+1000;
+		}
+};
+int main()
+{
+	Emp obj;	// Emp is the datatype of obj.   class name acts as a datatype for its objects
+	obj.get_emp_data();
+	obj.show_emp_data();
+	++obj;    // obj.operator++();    
+	obj.show_emp_data();
+	int x=20000;
+	++x;
+	cout<<"\n value of x is "<<x;
+}
+
