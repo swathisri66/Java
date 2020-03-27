@@ -1,0 +1,33 @@
+// overloading -- operator
+#include <iostream>
+using namespace std;
+class Sample
+{
+	private:
+		int x,y,z;
+	public:
+		void get_values()
+		{
+			cout<<"\n enter values for x, y and z ";
+			cin>>x>>y>>z;
+		}
+		void show_values()
+		{
+			cout<<"\n  x="<<x<<" y="<<y<<" z="<<z;
+		}
+		void operator--()
+		{
+			x=x-3;
+			y=y-5;
+			z=z-x;
+		}
+};
+int main()
+{
+	Sample obj;
+	obj.get_values();
+	obj.show_values();
+	--obj;     // obj.operator--();
+	obj.show_values();
+}
+
