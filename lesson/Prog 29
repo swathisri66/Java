@@ -1,0 +1,36 @@
+/* Default constructor : It is a type of user defined constructor in which we don't have 
+					       any arguments and initializes atleast one variable
+					     All objects created using default constructor contains same values */
+#include <iostream>
+using namespace std;
+class Sample
+{
+	private:
+		int x,y;
+	public:
+		Sample()
+		{
+			x=50;
+			y=40;
+			cout<<"\n values are initialized";
+		}
+		void calc_square()
+		{
+			x=x*x;
+			y=y*y;
+		}
+		void show()
+		{
+			cout<<"\n x value is "<<x;
+			cout<<"\n y value is "<<y;
+		}
+};
+int main()
+{
+	Sample obj[5];
+	for(int c=0;c<5;c++)
+	{
+		obj[c].calc_square();
+		obj[c].show();
+	}
+}
