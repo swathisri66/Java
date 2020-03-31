@@ -1,0 +1,204 @@
+/* Suspending a thread based on time */
+
+class A extends Thread
+{
+ public void run()
+ {
+  try{
+   sleep(10000); 
+  }
+  catch(Exception e){}
+  for(int i=1;i<=10;i++)
+   System.out.println("Thread A executed " + i + " times");
+ } // run()
+} // class
+
+class B extends Thread
+{
+ public void run()
+ {
+  try{
+    sleep(5000); 
+  }
+  catch(Exception e){}
+  for(int i=1;i<=10;i++)
+   System.out.println("Thread B executed " + i + " times");
+ } // run()
+} // class
+
+class C extends Thread
+{
+ public void run()
+ {
+  for(int i=1;i<=10;i++)
+   System.out.println("Thread C executed " + i + " times");
+ } // run()
+} // class
+
+class SleepDemo
+{
+ public static void main(String args[])
+ {
+  A a1 = new A();
+  B b1 = new B();
+  C c1 = new C();
+  a1.start();
+  b1.start();
+  c1.start();
+ } // main()
+} // class
+================================================
+/* Suspending a thread until another thread terminates */
+
+class A extends Thread
+{
+ public void run()
+ {
+  for(int i=1;i<=20;i++)
+   System.out.println("Thread A executed " + i + " times");
+ } // run()
+} // class
+
+class B extends Thread
+{
+ A a1;
+ B(A a1)
+ {
+  this.a1 = a1;
+ }
+ public void run()
+ {
+  for(int i=1;i<=20;i++)
+  {
+   System.out.println("Thread B executed " + i + " times");
+   try{
+     if(i == 2)
+       a1.join();
+   }
+   catch(Exception e){}
+  } // for
+ } // run()
+} // class
+
+class JoinDemo
+{
+ public static void main(String args[])
+ {
+  A a1 = new A();
+  B b1 = new B(a1);
+  a1.start();
+  b1.start();
+ } // main()
+} // class
+================================================
+NOTE : (See Fig):
+=> A class can be created as a thread either by extending the Thread class or by implementing the Runnable interface.
+
+=> If a class is not extending any class,it can be created as a thread either by implementing Runnable interface or by extending Thread class.
+
+=> If a class is already extending some class,it can be created as a Thread only by implementing Runnable interface. It cannot extend Thread class.
+================================================
+Accessing Threads based on priorities:
+Thread class:
+== getPriority() : To read the priority value of a thread
+== setPriority(n) : To assign priority value to a thread
+n => 1(least P.V) to 10(highest P.V)
+
+Priority constants in Thread class:
+== MAX_PRIORITY => 10
+== MIN_PRIORITY => 1
+== NORM_PRIORITY => 5(The default priority value of a thread)
+================================================
+/* Program to display thread priorities */
+
+class A extends Thread
+{
+ public void run()
+ {
+  System.out.println("Inside Thread A");
+  for(int i=1;i<=10;i++)
+   System.out.println("Thread A executed " + i + " times");
+ } // run()
+} // class
+
+class B extends Thread
+{
+ public void run()
+ {
+  System.out.println("Inside Thread B");
+  for(int i=1;i<=10;i++)
+   System.out.println("Thread B executed " + i + " times");
+ } // run()
+} // class
+
+class C extends Thread
+{
+ public void run()
+ {
+  System.out.println("Inside Thread C");
+  for(int i=1;i<=10;i++)
+   System.out.println("Thread C executed " + i + " times");
+ } // run()
+} // class
+
+class PriorityDemo
+{
+ public static void main(String args[])
+ {
+  A a1 = new A();
+  B b1 = new B();
+  C c1 = new C();
+  System.out.println("Priority of Thread A : " + a1.getPriority());
+  System.out.println("Priority of Thread B : " + b1.getPriority());
+  System.out.println("Priority of Thread C : " + c1.getPriority());
+
+  c1.setPriority(Thread.MAX_PRIORITY);
+  b1.setPriority(c1.getPriority() - 8);
+  a1.setPriority(b1.getPriority() + 5);
+
+  System.out.println("Priority of Thread A : " + a1.getPriority());
+  System.out.println("Priority of Thread B : " + b1.getPriority());
+  System.out.println("Priority of Thread C : " + c1.getPriority());
+ } // main()
+} // class
+==========================================
+Streams in Java:
+=> Any data that flows between two devices is called a stream. The device from which the data is sent is called Sender and the device to which the data is sent is called Receiver.
+		    Data
+ Sender ===========================> Receiver
+             (char's or bytes)
+
+=> During this communication, the devices must identify one another. This identification is done through the addressing of devices. In OOP Languages, addresses are represented as objects.
+
+=> To represent stream, Java provided several classes in java.io package. These classes can be classified into :
+1) Byte-Oriented classes : 
+== Represent streams as an array of bytes
+== Any Java class whose name ends with 'Stream' is a byte-oriented class
+Eg: PrintStream, InputStream,FileInputStream, FileOutputStream,...
+
+2) Character-Oriented classes : 
+== Represent streams as an array of characters
+== Any Java class whose name ends with 'Reader' or 'Writer' is a character-oriented class
+Eg: BufferedReader,BufferedWriter,InputStreamReader,PrintWriter,....
+================================================
+Reading input from console :
+== java.util.Scanner => not thread-safe
+== java.io.DataInputStream
+== java.io.BufferedReader
+================================================
+readLine() : This method reads input from the user and converts it into a String object. This method is defined to throw IOException
+Eg:
+/* Program to read and print your name */
+
+import java.io.*;
+
+class ReadName
+{
+ public static void main(String args[])throws Exception
+ {
+  DataInputStream dis = new DataInputStream(System.in);
+  System.out.print("Enter your name : ");
+  String name = dis.readLine();
+  System.out.println("Welcome " + name);
+ } // main()
+} // class
