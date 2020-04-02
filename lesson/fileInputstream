@@ -1,0 +1,101 @@
+/* Program to implement FileInputstream class */
+
+import java.io.*;
+
+class FISDemo
+{
+ public static void main(String args[])throws Exception
+ {
+  FileInputStream fis = new FileInputStream("sample.txt");
+
+  // Read the size of file(in no. of bytes)
+  int size = fis.available();
+  byte b[] = new byte[size];
+  fis.read(b); // read data from file
+  String text = new String(b);
+  System.out.println("Contents of sample.txt are : " + text);
+  fis.close();
+ } // main()
+} // class
+========================================
+/* Program to implement FileInputstream class */
+
+import java.io.*;
+
+class FISDemo
+{
+ public static void main(String args[])throws Exception
+ {
+  BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+  System.out.print("Enter the filename  to read : ");
+  String filename = br.readLine();
+  FileInputStream fis = new FileInputStream(filename);
+
+  // Read the size of file(in no. of bytes)
+  int size = fis.available();
+  byte b[] = new byte[size];
+  fis.read(b); // read data from file
+  String text = new String(b);
+  System.out.println("Contents of given file are : " + text);
+  fis.close();
+ } // main()
+} // class
+=============================================
+/* Program to implement FileWriter class */
+
+import java.io.*;
+
+class FileWriterDemo
+{
+ public static void main(String args[])throws Exception
+ {
+  BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+  System.out.print("Enter some text : ");
+  String txt = br.readLine();
+  FileWriter fw = new FileWriter("file1.txt",true);
+  char ch[] = txt.toCharArray();
+  fw.write(ch);
+  fw.close();
+  System.out.println("File Created Successfully");
+ } // main()
+} // class
+=====================================================
+/* Program to implement FileReader class */
+
+import java.io.*;
+import java.util.*;
+
+class FileReaderDemo
+{
+ public static void main(String args[])throws Exception
+ {
+  FileReader fr = new FileReader("file1.txt");
+  Scanner sc = new Scanner(fr);
+  String txt = sc.nextLine();
+  System.out.println("Contents of file1.txt are : " + txt);
+  fr.close();
+ } // main()
+} // class
+=================================================
+/* Program to implement FileReader class */
+
+import java.io.*;
+import java.util.*;
+
+class FileReaderDemo
+{
+ public static void main(String args[])throws Exception
+ {
+  FileReader fr = new FileReader("file1.txt");
+  String txt = "";
+  int item = fr.read();
+  while(item != -1)
+  {
+   char ch = (char)item;
+   txt = txt + ch;
+   item = fr.read();
+  }
+  System.out.println("Contents of file1.txt are : " + txt);
+  fr.close();
+ } // main()
+} // class
