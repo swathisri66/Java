@@ -1,0 +1,19 @@
+/* Program to perform Arithmetic Operations on two numbers  */
+
+class Arithmetic
+{
+ public static void main(String args[])
+ {
+  int a = 100,b = 20;
+  int c = a + b;
+  System.out.println("Sum = " + c);
+  c = a - b;
+  System.out.println("Difference = " + c);
+  c = a * b;
+  System.out.println("Product = " + c);
+  c = a / b;
+  System.out.println("Division = " + c);
+  c = a % b;
+  System.out.println("Remainder = " + c);
+ } // main()
+} // class
