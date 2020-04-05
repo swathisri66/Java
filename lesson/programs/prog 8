@@ -1,0 +1,13 @@
+/* Program to print area and perimeter of Circle for Given radius */
+
+class Circle
+{
+ public static void main(String args[])
+ {
+  double r = 12.5;
+  double area = Math.PI * r * r;
+  double peri = 2 * Math.PI * r;
+  System.out.println("Area of Circle = " + area);
+  System.out.println("Perimeter of Circle = " + peri);
+ } // main()
+} // class
