@@ -1,0 +1,13 @@
+/* Program to check whether the given number is Even or Odd */
+
+class EvenOdd
+{
+ public static void main(String args[])
+ {
+  int n = 1000;
+  if(n % 2 == 0)
+    System.out.print(n + " is Even");
+  else
+    System.out.print(n + " is Odd");
+ } // main()
+} // class
