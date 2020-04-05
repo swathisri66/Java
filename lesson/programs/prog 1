@@ -1,0 +1,18 @@
+/* Prgram to print the multiplication table of a given number */
+
+class TableDemo3
+{
+	public static void main(String args[]) throws Exception
+	{
+		int n =3;
+		for(int x = 1;x<=n;x++)
+		{
+			System.out.println("Multiplication Table of " + x + " is : ");
+			for(int i=1;i<=10;i++)
+				System.out.printf(" %d X %d = %d \n",x,i,x*i);
+			System.out.println("\n");
+			System.out.println("\n Please wait to continue ....\n ");
+			Thread.sleep(3000); //Blocks program execution for 3 seconds
+		}
+	}
+}
