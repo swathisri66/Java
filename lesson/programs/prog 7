@@ -1,0 +1,13 @@
+/* Program to check weather the given number is odd or even */
+
+class Even
+{
+	public static void main(String args[])
+	{
+		int n = 1000;
+		if(n % 2 == 0)  //logic//
+			System.out.print(n + "   is even");
+		else
+			System.out.println(n + " is odd");
+	}
+}
