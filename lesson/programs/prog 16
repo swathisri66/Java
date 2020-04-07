@@ -1,0 +1,32 @@
+/* Program - 2 on objects */
+
+class Employee
+{
+	int empno;
+	String name;
+	double basic;
+	void getEmp(int x,String y, double z)
+	{
+		empno = x;
+		name = y;
+		basic = z;
+	}
+	void printEmp()
+	{
+		System.out.println(empno + " " + name + " " + basic);
+	}
+	public static void main(String args[])
+	{
+		Employee e1 = new Employee();
+		Employee e2 = new Employee();
+		
+		Employee e3 = new Employee();
+		e1.getEmp(101, "aaa",10000.00);
+		e2.getEmp(102, "bbb",20000.00);
+		e3.getEmp(103, "ccc",30000.00);
+		System.out.println("The Employee Details are : ");
+		e1.printEmp();
+		e2.printEmp();
+		e3.printEmp();
+	}
+}
