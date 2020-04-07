@@ -1,0 +1,34 @@
+/* creating objects in Java */
+Syntax - 1:
+class-name reference;
+reference = new class-name();
+Eg;
+Sample s;
+s = new Sample();
+
+Syntax - 2;
+class-name reference = new class-name(); */
+
+/* Program to demonstrate objects*/
+
+class ObjDemo1
+{
+	int a = 100, b = 200;
+	void fun1()
+	{
+		System.out.println("Inside fun1 of Sample"):
+	}
+	void fun2()
+	{
+		System.out.println("Inside fun2 of Sample");
+	}
+	public static void main(String args[])
+	{
+		ObjDemo1 d = new ObjDemo1();
+		System.out.println("a = " + d.a);
+		System.out.println("b = " + d.b);
+		d.fun1();
+		d.fun2();
+		System.out.println("Address of Object : " + d);
+	}
+}
