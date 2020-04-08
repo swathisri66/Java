@@ -1,0 +1,21 @@
+/* factorial */
+
+public class Factorial1 {
+	
+	public static void main(String []args)
+	{
+		int factorialVal = 5;
+		int factorial = 1;
+		 
+		 while(factorialVal > 1)
+			 factorial *= factorialVal--;
+		 
+		 /*{
+			 factorial *= factorialVal;
+			 factorialVal -=1;
+		 }*/
+System.out.println(factorial);		
+
+	}
+
+}
