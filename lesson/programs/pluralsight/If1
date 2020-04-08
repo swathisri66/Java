@@ -1,0 +1,17 @@
+public class If1 {
+
+    public static void main(String[] args) {
+        float students = 9;
+        float rooms = 4;
+
+        if(students > 0)
+    {
+        if (rooms > 0)
+            System.out.println(students / rooms);
+    }
+        else
+            System.out.println("No students");
+    }
+
+}
+
