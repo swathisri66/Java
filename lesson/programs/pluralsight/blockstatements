@@ -1,0 +1,13 @@
+public class If1 {
+
+    public static void main(String[] args) {
+        int students = 9;
+        int rooms = 4;
+
+        if(students > 0 && rooms > 0 && students/rooms > 2)
+                System.out.println("crowded");
+
+            System.out.println("No students");
+    }
+
+}
