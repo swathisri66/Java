@@ -1,0 +1,20 @@
+/* a, s, m using integers */
+
+public class CalEngine {
+
+	public static void main(String [] args) {
+	
+	int val1 = 2;
+	int val2 = 3;
+	//int addition = val1 + val2;
+	//int subtraction = val1 - val2;
+	char operations[] = {'a', 's'};
+	int results[] =  { val1 + val2, val1 - val2 } // val1 * val2, val1 / val2 };
+	int results[] = new int[operations.length]
+	
+	
+	System.out.println("results = " + results[0] );
+	
+}
+}
+ 
