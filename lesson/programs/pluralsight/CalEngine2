@@ -1,0 +1,41 @@
+public class CalEngine {
+	
+	public static void main(String []args) {
+		
+		double[] vals1 = {5.0d, 10.0d, 15.0d, 20.0d};
+		double[] vals2 = {20.0d, 15.0d, 10.0d, 5.0d};
+		char[] opCodes = {'a', 's', 'm', 'd'};
+		double[] results = new double[opCodes.length]; 
+		
+		/*double val1 = 100.0d;
+		double val2 = 100.0d;
+		double result;
+		char opCode = 'm'; */
+		
+			for(int i = 0; i < opCodes.length; i++) {
+			if (opCodes[i] == 'a')
+				results[i] = vals1[i] + vals2[i];
+			else if(opCodes[i] == 's')
+				results[i] = vals1[i] - vals2[i];
+			else if(opCodes[i] == 'd') {
+				results[i] = vals2[i] != 0.0d ? vals1[i] / vals2[i] : 0.0d;
+			//	if(val2 != 0.0d)
+			//		result = val1 / val2;
+			//	else
+			//		result = 0.0d;
+			} else if(opCodes[i] == 'm')
+				results[i] = vals1[i] * vals2[i];
+			else
+			{
+				System.out.println("Error -  invalid opCode");
+				results[i] = 0.0d;
+			}
+	
+		}
+			for(double theResult : results) {
+				System.out.println("result = ");
+				System.out.println(theResult);
+			}
+		}
+			
+}
