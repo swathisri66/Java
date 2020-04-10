@@ -1,0 +1,14 @@
+/* Type casting */
+
+public class MyClass {
+	public static void main(String [] args) {
+		//int myInt = 9;
+		//double myDouble = myInt;
+		double myDouble = 9.0d;
+		int myInt = (int) myDouble;
+		System.out.println(myInt);
+		System.out.println(myDouble);
+	}
+}
+
+	
