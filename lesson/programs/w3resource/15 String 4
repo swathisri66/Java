@@ -1,0 +1,15 @@
+
+public class Backskash {
+	public static void main (String[] args)
+	{
+		String txt = "The character \\ is called backslash.";
+		String txt1 = "It \'s a string";
+		String txt2 = ("The double quotes are written in \"backslash\".");
+		
+		System.out.println(txt);
+		System.out.println(txt1);
+		System.out.println(txt2);
+	}	
+		
+
+}
