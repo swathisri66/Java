@@ -6,5 +6,6 @@ public class Concatenate {
 		String lastName = "Kamani";
 		
 		System.out.println(firstName + " " + lastName);
+		System.out.println(firstName.concat(lastName));
 	}
 }
