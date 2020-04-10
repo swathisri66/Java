@@ -1,0 +1,8 @@
+/* string */
+
+public class Alphabets {
+	public static void main(String[] args) {
+		String txt = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+		System.out.println("txt length is = " + txt.length());
+	}
+}
