@@ -1,0 +1,9 @@
+/* locate */
+
+public class Locate {
+	public static void main (String[] args)
+	{
+		String txt =("Find the letter 'a' in the txt");
+		System.out.println(txt.indexOf("a"));
+	}
+}
