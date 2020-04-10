@@ -1,0 +1,330 @@
+ORACLE Package : 
+== SQL(Structured Query Language)
+   -- Non-Procedural Database Language(What to do,but not how?)
+   -- Database operations are implemented as a set of commands
+== PL/SQL(Procedural Language for SQL)
+   -- Procedural Database Language(What to do and also how?)
+   -- Database operations are implemented as a set of programs
+== SQL *plus ORACLE console or command prompt(SQL commands and PL/SQL programs are submitted here).
+===========================================================
+1) DDL(Data Definition Language) : The commands of this language are used to access table structure. They include :
+
+=> CREATE : This command is used to create a new table.
+=> ALTER : This command is used to modify the structure of an existing table.
+=> DESC[RIBE] : This command is used to display the structure of an existing table.
+=> TRUNCATE : This command removes all the records of a given table. But, still structure will exist.
+=> DROP : This command destroys the table structure along with data.
+===========================================================
+2) DML(Data Manipulation Language) : The command of this language are used to access table data. They include :
+
+=> INSERT : This command is used to add a new record.
+=> UPDATE : This command is used to modify an existing record.
+=> DELETE : This command is used to remove an existing record.
+
+Difference between TRUNCATE and DELETE commands :
+1) TRUNCATE command removes all the records of a given table while with DELETE command,we will remove selected records.
+2) The data deleted using TRUNCATE command cannot be rolled back while the data deleted using DELETE command can be rolled back.
+3) TRUNCATE removes data page by page and hence faster while DELETE removes data record by record and hence slower.
+===========================================================
+3) DRL/DQL : Data Retrieval/Query Language : This language provides a command SELECT used to display the records of a given table.
+===========================================================
+4) DCL(Data Control Language) : The command of this language provides data security. They include : 
+
+=> GRANT : This command provides privileges(permissions) to access the database.
+=> REVOKE : This command cancels permissions from accessing the database.
+===========================================================
+5) TCL(Transaction Control Language) : The commands of this language provide transaction security. They include:
+
+=> COMMIT : This command is used to save the results of a successfully completed transaction.(Default enabled)
+=> ROLLBACK : This command restarts a failed transaction.
+=> SAVEPOINT : This command is used to save a transaction at regular intervals so that it can be rolled back from any point.
+============================================================
+Datatypes in ORACLE :
+
+1) Numeric Datatypes : The variables or columns under these datatypes store numeric values. They include :
+
+a) NUMBER(both Integer an real values) : 
+=> as Integer :
+ column-name NUMBER(n) : n => no. of digits
+ Eg:
+ ROLLNO NUMBER(3); -999 to 999
+
+=> as Real :
+ column-name NUMBER(n,p) : n => no. of digits  p => precision
+Eg:
+ BALANCE NUMBER(7,2); xxxxx.xx
+
+b) NUMERIC => same as NUMBER
+c) TINYINT(1),SMALLINT(2),INT(4),BIGINT(8)
+d) FLOAT,REAL(double in C)
+=================================================
+2) Character or String datatypes : Hold characters or strings.
+
+a) CHAR(8-bit ASCII) or NCHAR(16-bit Unicode) :
+ column-name CHAR(n); n => no. of characters(Max. 4000 characters)
+Eg:
+ CUST_NAME CHAR(20); 
+(-) : This datatype creates fixed-length strings. 
+
+b) VARCHAR2 or NVARCHAR2 : (Creates variable-length strings)
+ column-name VARCHAR2(n); (n => MAx. 8000 characters)
+Eg:
+ CUST_NAME VARCHAR2(20);
+
+c) BINARY : To store bit strings.
+===================================================
+3) Date and time datatypes :
+
+a) DATE : To hold date values
+Date Format in ORACLE : dd-mon-yy Eg: 14-MAR-18
+
+b) DATETIME,TIMESTAMP :To store both date and time values
+Range : 01-JAN-4712 B.C 00:00:00 to 31-DEC-4712 A.D 23:59:59
+===================================================
+4) LOBs : Large OBjects(Can hold from 4GB to 1TB of value)
+
+a) BLOB : Binary Large OBject (To store images and other multimedia files)
+b) CLOB : Character Large OBject(To store large text files)
+===================================================
+NOTE : ORACLE => Case-Insensitive and each SQL command is terminated with semi-colon
+===================================================
+Connecting to ORACLE : SQL *plus(Command-line mode)
+1) Select start and Type "Run SQL Command Line".
+2) Type connect and enter username and password.
+
+(or)
+1) Goto Run Menu(Windows + R) and type "sqlplus" and press enter. Type Username and password
+===================================================
+Creating a new user in ORACLE :
+
+1) Connect to SQL *plus
+2) Login to the user SYSTEM
+3) Create a user as below:
+SQL > CREATE USER username IDENTIFIED BY password;
+Eg:
+SQL > CREATE USER SIRI IDENTIFIED BY ABHINAV;
+4) Acquire permissions to connect and access your account.
+SQL > GRANT CONNECT,RESOURCE TO username;(To Connect as Normal User)
+Eg:
+SQL > GRANT CONNECT,RESOURCE TO SIRI;
+
+(or)
+SQL > GRANT CONNECT,DBA TO username;(To Connect as DBA User)
+Eg:
+SQL > GRANT CONNECT,DBA TO SIRI;
+
+5) Now,we can create and maintain tables by connecting to our account as :
+SQL > CONN[ECT]
+
+6) To see the list of already available users,type(in SYSTEM user) :
+SQL > SELECT USERNAME FROM DBA_USERS;
+
+7) To delete an existing user :
+SQL > DROP USER username;
+Eg:
+SQL > DROP USER SIRI;
+
+8) To see the name of the user under which we are currently logged in, type :
+SQL > SELECT USER FROM DUAL;
+=====================================================
+Table structures:
+=====================================================
+Table-name   column-name    datatype(size)
+=====================================================
+1. CUSTOMER    CUST_ID	     NUMBER(3) =>101-199
+	       CUST_NAME     CHAR(10)
+	       CUST_CITY     CHAR(10)
+
+2. ACCOUNT	ACC_ID	     NUMBER(3)  => 201-299
+	   	ACC_TYPE     CHAR(2)	=> 'SB','CR','RD'
+		BALANCE	     NUMBER(7,2)=> Min.1000
+
+3. LOAN		LOAN_ID	     NUMBER(3)	=> 301-399
+		LOAN_TYPE    CHAR(2)	=> 'ED','AG','PR'
+		LOAN_AMT     NUMBER(7,2)
+======================================================
+CREATE TABLE command : This DDL command is used to create a new table. Its syntax is :
+SQL > CREATE TABLE table-name(
+ column-name datatype(size),
+ column-name datatype(size),
+ ....);
+Eg:
+SQL > CREATE TABLE CUSTOMER(
+ CUST_ID NUMBER(3),
+ CUST_NAME CHAR(10),
+ CUST_CITY CHAR(10));
+
+SQL > CREATE TABLE ACCOUNT(
+ ACC_ID NUMBER(3),
+ ACC_TYPE CHAR(2),
+ BALANCE NUMBER(7,2));
+
+SQL > CREATE TABLE LOAN(
+ LOAN_ID NUMBER(3),
+ LOAN_tYPE CHAR(2),
+ LOAN_AMT NUMBER(7,2));
+
+=> To see the list of tables available under the current user,type :
+SQL > SELECT * FROM TAB;
+==============================================
+DESC[RIBE] command : This DDL command is used to display the structure of an existing table. Its syntax is :
+SQL > DESC table-name;
+Eg:
+SQL > DESC CUSTOMER;
+SQL > DESC ACCOUNT;
+SQL > DESC LOAN;
+=============================================
+INSERT command : This DML command is used to add a new record into a existing table. This command has several forms. 
+
+Syntax of format-1 :
+
+SQL > INSERT INTO table-name(column-list) VALUES(list-of-values);
+Eg:
+SQL > INSERT INTO CUSTOMER(CUST_ID,CUST_NAME,CUST_CITY) VALUES(101,'SURESH','VIJAYAWADA');
+SQL > INSERT INTO CUSTOMER(CUST_ID,CUST_NAME,CUST_CITY) VALUES(102,'RAMESH','GUNTUR');
+...
+SQL > INSERT INTO ACCOUNT(ACC_ID,ACC_TYPE,BALANCE) VALUES(201,'SB',12500);
+SQL > INSERT INTO ACCOUNT(ACC_ID,ACC_TYPE,BALANCE) VALUES(202,'CR',25000);
+....
+SQL > INSERT INTO LOAN(LOAN_ID,LOAN_TYPE,LOAN_AMT) VALUES(301,'ED',50000);
+SQL > INSERT INTO LOAN(LOAN_ID,LOAN_TYPE,LOAN_AMT) VALUES(302,'AG',60000);
+....
+
+=> To check whether the records were inserted or not,type:
+SQL > SELECT * FROM table-name;
+Eg:
+SQL > SELECT * FROM CUSTOMER;
+SQL > SELECT * FROM ACCOUNT;
+SQL > SELECT * FROM LOAN;
+
+NOTE : This format is used when we want to insert values for selected columns of a table or in the random order they exist.
+Eg:
+SQL > INSERT INTO CUSTOMER(CUST_ID,CUST_CITY) VALUES(103,'NELLORE');
+SQL > INSERT INTO ACCOUNT(ACC_TYPE,BALANCE,ACC_ID) VALUES('RD',30000,203);
+============================================================
+Syntax of format-2 :
+SQL > INSERT INTO table-name VALUES(list-of-values);
+
+-> This format is used when we want to insert values for all columns of a table and in the same order they exist.
+Eg:
+SQL > INSERT INTO CUSTOMER VALUES(104,'SASI','VIJAYAWADA');
+...
+SQL > INSERT INTO ACCOUNT VALUES(204,'SB',25000);
+...
+SQL > INSERT INTO LOAN VALUES(303,'PR',75000);
+....
+SQL > SELECT * FROM CUSTOMER;
+SQL > SELECT * FROM ACCOUNT;
+SQL > SELECT * FROM LOAN;
+==========================================================
+Syntax of format-3 :
+SQL > INSERT INTO table-name VALUES(&column-1,&column-2,...); where '&' is an input operator.
+Eg:
+SQL > INSERT INTO CUSTOMER VALUES(&CUST_ID,'&CUST_NAME','&CUST_NAME');
+SQL > /
+...
+SQL > INSERT INTO ACCOUNT VALUES(&ACC_ID,'&ACC_TYPE',&BALANCE);
+SQL > /
+SQL > INSERT INTO LOAN VALUES(&LOAN_ID,'&LOAN_TYPE',&LOAN_AMT);
+SQL > /
+==========================================================
+ALTER TABLE command : This DDL command is used to modify the structure of an existing table. Its syntax is :
+SQL > ALTER TABLE table-name
+ ADD column-name datatype(size) |
+ MODIFY column-name datatype(size) |
+ DROP COLUMN column-name |
+ RENAME COLUMN old-name TO new-name |
+ RENAME TO new-table-name;
+
+-> Add a new column PHONE to CUSTOMER table.
+SQL > ALTER TABLE CUSTOMER ADD PHONE NUMBER(6);
+SQL > DESC CUSTOMER;
+SQL > SELECT * FROM CUSTOMER;
+==========================================================
+UPDATE command : This DML command is used to modify the records of a given table. Its syntax is :
+SQL > UPDATE table-name
+ SET expression
+ [WHERE condition];
+Eg:
+SQL > UPDATE CUSTOMER SET PHONE = 222333;
+SQL > SELECT * FROM CUSTOMER;
+
+-> In this syntax,if WHERE clause is not used,every row will be updated. If used,the rows that satisfy the given condition will be updated.
+Eg:
+SQL > UPDATE CUSTOMER SET PHONE = 222444 WHERE CUST_ID = 102;
+SQL > UPDATE CUSTOMER SET PHONE = 222555 WHERE CUST_ID = 103;
+SQL > UPDATE CUSTOMER SET PHONE = 222666 WHERE CUST_ID = 104;
+...
+SQL > SELECT * FROM CUSTOMER;
+==================================================
+-> A customer has deposited an amount of Rs.5000 in his account whose ID is 209. Update the record.
+SQL > UPDATE ACCOUNT SET BALANCE = BALANCE + 5000 WHERE ACC_ID = 209;
+
+-> A customer has withdrawn an amount of Rs.5000 from his account whose ID is 210. Update the record.
+SQL > UPDATE ACCOUNT SET BALANCE = BALANCE - 5000 WHERE ACC_ID = 210;
+
+-> A customer has paid an instalment of Rs.5000 on his loan whose ID is 305. Update the record.
+SQL > UPDATE LOAN SET LOAN_AMT = LOAN_AMT - 5000 WHERE LOAN_ID = 305;
+
+-> Assign a name SUDHEER to a customer whose ID is 103.
+SQL > UPDATE CUSTOMER SET CUST_NAME='SUDHEER' WHERE CUST_ID = 103;
+
+-> Change the city name GUNTUR to AMARAVATHI.
+SQL > UPDATE CUSTOMER SET CUST_CITY='AMARAVATHI' WHERE CUST_CITY='GUNTUR';
+
+-> The Manager has decided to pay an interest of 10% on all saving accounts. Update the records.
+SQL > UPDATE ACCOUNT SET BALANCE = BALANCE * 1.1 WHERE ACC_TYPE='SB';
+==================================================
+-> Change the column size of PHONE to 10 digits.
+SQL > ALTER TABLE CUSTOMER MODIFY PHONE NUMBER(10);
+SQL > DESC CUSTOMER;
+
+=> Assign mobile numbers to all customers
+SQL > UPDATE CUSTOMER SET PHONE=9290821819 WHERE CUST_ID = 101;
+SQL > UPDATE CUSTOMER SET PHONE=9290821820 WHERE CUST_ID = 102;
+...
+SQL > SELECT * FROM CUSTOMER;
+=================================================
+-> Change the column name PHONE to MOBILE.
+SQL > ALTER TABLE CUSTOMER
+RENAME COLUMN PHONE TO MOBILE;
+SQL > DESC CUSTOMER;
+SQL > SELECT * FROM CUSTOMER;
+=================================================
+-> Remove the column MOBILE from the CUSTOMER table.
+SQL > ALTER TABLE CUSTOMER 
+DROP COLUMN MOBILE;
+SQL > DESC CUSTOMER;
+SQL > SELECT * FROM CUSTOMER;
+=================================================
+DELETE command : This DML command is used to remove the records of a selected table. Its syntax is :
+SQL > DELETE FROM table-name
+ [WHERE condition];
+
+-> In this syntax, if WHERE clause is not used,every row will be deleted. If used,the records that satisfy the given condition will be deleted.
+
+Eg:
+SQL > DELETE FROM CUSTOMER WHERE CUST_ID = 108;
+SQL > DELETE FROM ACCOUNT WHERE BALANCE < 1000;
+SQL > DELETE FROM LOAN WHERE LOAN_TYPE='AG';
+
+SQL > DELETE FROM CUSTOMER;
+SQL > SELECT * FROM CUSTOMER;
+SQL > ROLLBACK;
+SQL > SELECT * FROM CUSTOMER;
+====================================================
+TRUNCATE TABLE command : This DDL command is used to remove all the records of a given table. The records hence deleted cannot be rolled back. Its syntax is :
+SQL > TRUNCATE TABLE table-name;
+Eg:
+SQL > TRUNCATE TABLE CUSTOMER;
+SQL > SELECT * FROM CUSTOMER;
+SQL > ROLLBACK;
+SQL > SELECT * FROM CUSTOMER;
+====================================================
+DROP TABLE command : This command destroys the table structure along with data. Its syntax is :
+SQL > DROP TABLE table-name;
+Eg:
+SQL > DROP TABLE CUSTOMER;
+SQL > DROP TABLE ACCOUNT;
+SQL > DROP TABLE LOAN;
+SQL > SELECT * FROM TAB;
