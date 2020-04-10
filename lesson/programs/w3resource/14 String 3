@@ -1,0 +1,10 @@
+
+public class Concatenate {
+	public static void main (String[] args)
+	{
+		String firstName = "Swathi";
+		String lastName = "Kamani";
+		
+		System.out.println(firstName + " " + lastName);
+	}
+}
