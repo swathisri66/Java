@@ -1,0 +1,69 @@
+ORACLE : 
+== By Oracle Corp
+== First Commercial RDBMS software
+
+Oracle Package:
+1) SQL : Structured Query Language
+== Non-Procedural database Language(What to do but not how?)
+== We interact with the database through a set of commands
+
+2) PL/SQL : Procedural Language for SQL
+== Procedural database Language(What to do and also how?)
+== We interact with the database through a set of programs
+3) SQL *plus : 
+== Oracle command line or console where SQL commands or PL/SQL programs are submitted.
+
+SQL(See Figure):
+=======================================================
+Datatypes in SQL :
+
+Numeric Datatypes:
+a) NUMBER :
+=> as Integer:
+column-name NUMBER(n); n => No. of digits
+Eg:
+EMP_ID NUMBER(3); XXX => -999 to 999
+
+=> as Real:
+column-name NUMBER(n,p); p => precision
+Eg:
+SALARY NUMBER(7,2); XXXXX.XX
+
+b) NUMERIC => Available in MySQL and SQL Server
+c) TINYINT(1),SMALLINT(2),INT(4),BIGINT(8),BIT(1 bit)
+d) FLOAT, REAL
+-----------------------------------------------------
+String (or) Character datatypes:
+a) CHAR (or) NCHAR :
+CHAR(8-bit ASCII)
+NCHAR(16-bit UniCode)
+column-name CHAR(n); n => no. of characters
+Eg:
+ST_NAME CHAR(20);
+(-) : This datatype creates fixed-length strings
+
+b) VARCHAR2 (or) NVARCHAR2 : Used as VARCHAR in MySQL and SQL Server
+column-name VARCHAR2(n);
+Eg:
+ST_NAME VARCHAR2(20);
+(+) : This datatype creates variable-length strings.
+RAMYA
+
+c) BINARY : To create bit streams
+---------------------------------------------------------
+Date and Time Datatypes:
+a) DATE : 
+Data format in ORACLE : dd-mon-yy Eg: 08-APR-20
+b) DATETIME and TIMESTAMP => Used to store both date and time values
+01-JAN-4712 B.C 00:00:00 to 31-DEC-4712 A.D 23:59:59
+--------------------------------------------------------
+LOBs(Large OBjects) : Each value can be 4GB to 1TB of data
+a) BLOB : Binary Large OBject
+== to store multimedia files
+b) CLOB : Character Large Object
+== to store large text files
+================================================================
+Super(Admin) users:
+SYSTEM/SYS => manager
+HR => manager
+================================================================
