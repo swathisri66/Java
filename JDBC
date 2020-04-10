@@ -1,0 +1,54 @@
+JDBC  (Java Database Connectivity)
+
+Java program values (variables)<------>JDBC Drivers<------->Database package
+
+Types of JDBC Drivers
+---------------------
+Type 1 driver	: JDBC-ODBC bridge driver 
+Type 2 driver	: Native API driver
+Type 3 driver	: Network protocol driver
+Type 4 driver	: Thin driver 
+
+Type1 & Type2 drivers are Platform/OS Dependent (developed using C&C++)
+
+Type3 driver : for Very Large database, 
+ 		used by Servers, Search Engines
+
+Type 4 driver is most commonly used driver. for majority of service oriented applications
+
+import java.sql.*;
+   DriverManager
+   Connection
+   Statement
+   PreparedStatement
+   CallableSatatement
+   Types
+   
+
+package pack1;
+public class Sample
+{
+  .....
+  .....
+  public static void even_odd(int n)
+  {
+    ....
+  }
+  create only public
+  variables and functions 
+   [dont write main()]
+  .....
+  .....
+}
+class name and filename should be same for public classes
+
+import java.util.Scanner;
+import java.io.*;
+import pack1.Sample;
+class abc
+{
+  void f1()
+  {
+    Sample.even_odd(x);
+
+
