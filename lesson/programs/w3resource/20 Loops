@@ -1,0 +1,35 @@
+/* loops */
+
+public class Loops {
+	
+	public static void main(String[] args) {
+		int i = 0;
+		
+		while (i < 5) {
+			
+			
+		System.out.println(i);
+		i++;
+		}
+		
+		System.out.println("\n-------------------------\n");
+		
+		do {
+			
+			System.out.println(y);
+			y++;
+		}
+		while (y < 5);
+		
+		System.out.println("\n-------------------------\n");
+		
+		{
+			
+		for (int x = 0; x <= 10; x = x + 2) {
+			System.out.println(x); 
+		}
+		}
+		
+	}			
+		
+}
