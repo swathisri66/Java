@@ -1,0 +1,8 @@
+public class MyClass1 {
+	static float myMethod(float x, float y) {
+		return x + y;
+	}
+	public static void main(String[] args) {
+		System.out.println(myMethod(5, 7));
+	}
+} 
