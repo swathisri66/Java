@@ -1,0 +1,12 @@
+/* Attributes */
+
+public class MyClassObj {
+	int x = 5;
+	public static void main(String[] args) {
+		MyClassObj myObj1 = new MyClassObj();
+		MyClassObj myObj2 = new MyClassObj();
+		System.out.println(Obj1.x);
+		System.out.println(Obj2.x);
+	}
+}
+
