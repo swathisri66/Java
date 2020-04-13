@@ -1,0 +1,8 @@
+public class MyClassObj {
+	int x;
+	public static void main(String[] args) {
+		MyClassObj myObj = new MyClassObj();
+		myObj.x = 70;
+		System.out.println(myObj.x);
+	}
+}
