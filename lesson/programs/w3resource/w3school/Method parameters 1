@@ -1,0 +1,13 @@
+/* Method */
+
+public class MyClass1 {
+	static void myMethod(String fname) {
+		System.out.println(fname + " Kamani \n");
+	}
+	public static void main(String[] args) {
+		myMethod("Swathi");
+		myMethod("Srividya");
+		myMethod("Pothuraju");
+		myMethod("Sulochana");
+	}
+}
