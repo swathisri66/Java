@@ -1,0 +1,19 @@
+/* Method overloading */
+
+public class MyClass2 {
+	static int sumMethodInt(int x, int y) {
+	return x + y;
+	}
+	
+	static double sumMethodDouble(double x, double y){
+	return x + y;
+	}
+	
+	public static void main(String[] args) {
+		int myNum1 = sumMethodInt(5, 7);
+		double myNum2 = sumMethodDouble(14, 84);
+		System.out.println("int : " + myNum1);
+		System.out.println("double : " + myNum2);
+	}
+}
+
