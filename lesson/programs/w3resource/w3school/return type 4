@@ -1,0 +1,13 @@
+public class MyClass1 {
+	static void ageCheck(int age) {
+if (age < 25) {
+System.out.println("You are young");
+	} 
+else {
+System.out.println("you are adult");
+}
+	}
+public static void main(String[] args) {
+ 	ageCheck(23);
+}
+}
