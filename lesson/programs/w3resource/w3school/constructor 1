@@ -1,0 +1,11 @@
+public class MyClass4 {
+	int x;
+	public MyClass4() {
+		x = 5;
+	}
+	
+	public static void main(String[] args) {
+		MyClass4 myObj = new MyClass4();
+		System.out.println(myObj.x);
+	}
+}
