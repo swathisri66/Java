@@ -1,0 +1,14 @@
+/* Modifiers */
+
+abstract class Person {
+	public String fname = "Swathi";
+	public int age = 35;
+	public abstract void study();
+}
+
+class Student extends Person {
+	public int graduationYear = 2020;
+	public void study() {                       //? 
+		System.out.println("Studying ");
+	}
+}
