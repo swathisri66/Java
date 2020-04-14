@@ -1,0 +1,16 @@
+/* Inheritence */
+
+class Vehicle {
+	protected String brand = "TATA"; //created object
+	public void indiancar() { // created method
+	System.out.println("Innova, Indica");
+	}
+}
+class Car2 extends Vehicle {
+	private String modelName = "Nano"; //attribute
+	public static void main(String[] args) {
+		Car2 myFastCar = new Car2();  //creating object for car
+		myFastCar.indiancar(); //call method
+		System.out.println(myFastCar.brand + " " + myFastCar.modelName);
+	}
+}
