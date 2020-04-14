@@ -1,0 +1,12 @@
+public class MyClassObj {
+	static void myStaticMethod() {
+		System.out.println(" static method called without creating objects");
+	}
+	public void myPublicMethod() {
+		System.out.println("public method called creating objects");
+	}
+	public static void main(String[] args) {
+		myStaticMethod();
+		MyClassObj myObj = new MyClassObj();
+	}
+}
