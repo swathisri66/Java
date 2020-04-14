@@ -1,0 +1,31 @@
+/* Polymorphism */
+
+class Animal {
+	public void animalSound() {
+		System.out.println("animal makes sound ");
+	}
+}
+class Dog extends Animal {
+	public void animalSound() {
+		System.out.println("dog says :  bow wow");
+	}
+}
+
+class Cat extends Animal {
+	public void animalSound() {
+		System.out.println("cat says :  mew mew");
+	}
+}
+
+class MyClassPolymorph {
+	public static void main(String[] args) {
+		Animal myAnimal = new Animal(); //creating object 
+		Animal myDog = new Dog();
+		Animal myCat = new Cat();
+		myAnimal.animalSound();
+		myDog.animalSound();
+		myCat.animalSound();
+	}
+}
+
+	
