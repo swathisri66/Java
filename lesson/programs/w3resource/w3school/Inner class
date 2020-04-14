@@ -1,0 +1,16 @@
+/* Inner class */
+
+class OuterClass {
+	int x = 7;
+	
+	 class InnerClass {
+		int y = 5;
+	}
+}
+public class MyMainClassInner {
+	public static void main(String[] args) {
+		OuterClass myOuter = new OuterClass();
+		OuterClass.InnerClass myInner = myOuter.new InnerClass();
+		System.out.println(myInner.y + myOuter.x);
+	}
+}
