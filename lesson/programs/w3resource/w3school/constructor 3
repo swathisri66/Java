@@ -1,0 +1,14 @@
+public class Car1 {
+	int ModelYear;
+	String ModelName;
+	
+	public Car1(int year, String Name) {
+		ModelYear = year;
+		ModelName = Name;
+	}
+	
+	public static void main(String[] args) {
+		Car1 myCar1 = new Car1(2020, "TATA");
+		System.out.println(myCar1.ModelYear + " " + myCar1.ModelName);
+	}
+}
