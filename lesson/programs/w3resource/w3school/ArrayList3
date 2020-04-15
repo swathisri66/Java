@@ -1,0 +1,12 @@
+import java.util.ArrayList;
+
+public class CarArrayListClass {
+	public static void main(String[] args) {
+		ArrayList<String> cars = new ArrayList<String>();
+		cars.add("Volvo");
+		cars.add("TATA");
+		cars.add("INDICA");
+		cars.set(1, "Opel");
+		System.out.println(cars);
+	}
+}
