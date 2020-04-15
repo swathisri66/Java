@@ -1,0 +1,16 @@
+import java.util.ArrayList;
+import java.util.Collections; 
+
+public class myNumberArrayListClass {
+	public static void main(String[] args) {
+	ArrayList<Integer> myNumbers = new ArrayList<Integer>(); 
+		myNumbers.add(50);
+		myNumbers.add(30);
+		myNumbers.add(70);
+		myNumbers.add(20);
+		Collections.sort(myNumbers);
+		for (int i : myNumbers) {
+			System.out.println(i);
+		}
+	}
+}
