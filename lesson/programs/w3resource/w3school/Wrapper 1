@@ -1,0 +1,12 @@
+import java.util.ArrayList;
+
+public class WrapperClass {
+	public static void main(String[] args) {
+		Integer myInt = 7;
+		Character myChar = 'S';
+		Double myDouble = 7.89;
+		System.out.println(myInt.intValue());
+		System.out.println(myChar.charValue());
+		System.out.println(myDouble.doubleValue());
+	}
+}
