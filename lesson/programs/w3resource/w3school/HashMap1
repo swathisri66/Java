@@ -1,0 +1,12 @@
+import java.util.HashMap;
+
+public class HashMapClass {
+	public static void main(String[] args) {
+		HashMap<String, String> Cities = new HashMap<String, String>();
+		
+		Cities.put("Telangana", "Hyderabad");
+		Cities.put("Andhra", "Vishakapatnam");
+		Cities.put("Karnataka", "Banglore");
+		System.out.println(Cities);
+	}
+}
