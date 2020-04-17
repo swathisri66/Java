@@ -1,0 +1,12 @@
+public class Try3 {
+	static void AgeIdentity(int age) {
+	if (age < 25) {
+	throw new ArithmeticException("Access denied");
+	} else {
+	System.out.println("Access granted");
+	}
+}
+	public static void main(String[] args) {
+	AgeIdentity(35);
+	}
+}
