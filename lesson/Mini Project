@@ -1,0 +1,78 @@
+  System.out.println("one row inserted");
+       System.out.print("Repeat y/n : ");
+       ch=(char)System.in.read();
+    }while(ch=='y'||ch=='Y');
+    ps.close();
+  }
+  static void modifyRecord()  throws Exception
+  {
+     System.out.println("write the code for modify record ");
+  }
+  static void deleteRecord() throws Exception
+  {
+     System.out.println("write the code for delete record ");
+  }
+  static void listRecords() throws Exception
+  {
+     System.out.println("write the code for list records ");
+  }
+  static void searchRecord() throws Exception
+  {
+    System.out.println("write the code for search record ");
+    ResultSet rs;
+    int empid;
+    char ch;
+    String q="select * from emp4 where employee_id=?";
+    PreparedStatement ps=cn.prepareStatement(q);
+    do
+    {
+       System.out.print("enter employee_id No. to search : ");
+       empid=sc.nextInt();
+       ps.setInt(1,empid);
+       rs=ps.executeQuery();
+       if (rs.next()==true)
+       {
+         System.out.println("Employee id is : "+rs.getInt(1));
+         System.out.println("Employee Name  : "+rs.getString(2));
+         System.out.println("Emp Salary is  : "+rs.getDouble(3));
+         System.out.println("Department id  : "+rs.getInt(4));
+         System.out.println("----------------------------------");         
+       }
+       else
+         System.out.println("employee_id does not exist");       
+       System.out.print("Repeat search y/n : ");
+       ch=(char)System.in.read();
+    }while(ch=='y'||ch=='Y');
+    rs.close();
+    ps.close();
+  }
+  public static void main(String args[]) throws Exception
+  {
+    // accept username and password to login
+    connectDatabase("hr","manager");
+    int cho;
+    do
+    {
+      System.out.println("********* M e n u *********");
+      System.out.println("    1 Insert records");
+      System.out.println("    2 Modify records");
+      System.out.println("    3 Delete records");
+      System.out.println("    4 List records");
+      System.out.println("    5 Search records");
+      System.out.println("    6 Exit");
+      System.out.print("*** Enter your choice : ");
+      cho=sc.nextInt();
+      switch(cho)
+      {
+         case 1 : insertRecord();  break;
+         case 2 : modifyRecord();  break;
+         case 3 : deleteRecord();  break;
+         case 4 : listRecords();  break;
+         case 5 : searchRecord();  break;
+         case 6 : System.out.println("end of program"); break;
+         default: System.out.println("Invalid choice...retry...");
+      }
+    }while(cho!=6);
+    cn.close();
+  }
+}
