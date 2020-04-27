@@ -1,0 +1,24 @@
+/* program to accept employee_id and display the employee_name,
+  department_name, city and salary USING COLUMN TYPE variables  */
+
+declare
+  empid employees.employee_id%type;
+  ename employees.first_name%type;
+  sal employees.salary%type;
+  dname departments.department_name%type;
+  city_name locations.city%type;
+begin
+  empid:=&employee_id_number;
+
+  select e.first_name, e.salary, d.department_name, l.city into ename, sal, dname, city_name 
+    from employees e, departments d, locations l
+    where e.department_id = d.department_id and 
+    d.location_id = l.location_id and 
+    e.employee_id = empid;
+
+  dbms_output.put_line('employee name is '||ename);
+  dbms_output.put_line('employee salary is '||sal);
+  dbms_output.put_line('department name is '||dname);
+  dbms_output.put_line('employee city is '||city_name);
+end;
+/
