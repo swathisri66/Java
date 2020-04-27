@@ -1,0 +1,12 @@
+/* procedure to display employee records when department_id is given from 'emp2' table */
+
+create or replace procedure delete_emp4_rec(eno number) is
+begin
+  delete from emp4 where employee_id=eno;
+  if SQL%found then
+     dbms_output.put_line('record delete');
+  else
+     dbms_output.put_line('Emp record NOT found');
+  end if;
+end;
+/
