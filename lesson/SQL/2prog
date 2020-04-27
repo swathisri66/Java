@@ -1,0 +1,12 @@
+/* program to accept 2 values and calculate the sum */
+declare
+  x number(5);
+  y number(5);
+  z number(6);
+begin
+  x:=&x;
+  y:=3;
+  z:=x+y;
+  dbms_output.put_line('total is '||z);
+end;
+/
