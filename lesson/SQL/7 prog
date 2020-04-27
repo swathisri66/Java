@@ -1,0 +1,37 @@
+/* program to create a package body */
+create or replace package body apec is
+  procedure show_deptname(eno number) is
+    ename employees.first_name%type;
+    dname departments.department_name%type;
+  begin
+    select e.first_name, d.department_name into ename, dname from employees e, departments d
+      where e.department_id = d.department_id and e.employee_id=eno;
+    dbms_output.put_line('Employee id No.  : '||eno);
+    dbms_output.put_line('Employee  name   : '||ename);
+    dbms_output.put_line('Department name  : '||dname);
+  exception
+    when no_data_found then
+      dbms_output.put_line('Given employee_id does not exist');
+  end;
+  procedure show_emps(dno number) is
+  begin
+    dbms_output.put_line('you have to write the code');
+    /* your taks is here  (Hint: use a cursor)  */
+  end;
+  function get_salary(eno number) return number;
+    sal number:=0;
+  begin
+    /* your taks is here  */
+    return sal;
+  end;
+  function get_name(eno number) return varchar2;
+    ename employees.first_name%type;
+  begin
+    select first_name into ename from employees where employee_id=eno; 
+    return ename;
+  exception
+    when no_data_found then
+      return 'NOTFOUND';
+  end;
+END;
+/
