@@ -1,0 +1,12 @@
+/* program to accept employee_id and display the name and salary */
+declare
+  empid number(3);
+  ename varchar2(10);
+  sal number(8,2);
+begin
+  empid:=&employee_id_number;
+  select first_name, salary into ename, sal from emp3 where employee_id=empid;
+  dbms_output.put_line('employee name is '||ename);
+  dbms_output.put_line('employee salary is '||sal);
+end;
+/
