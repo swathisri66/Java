@@ -1,0 +1,14 @@
+/* program to accept employee_id and display the name and salary
+   USING COLUMN TYPE variables  */
+
+declare
+  empid emp3.employee_id%type;
+  ename emp3.first_name%type;
+  sal emp3.salary%type;
+begin
+  empid:=&employee_id_number;
+  select first_name, salary into ename, sal from emp3 where employee_id=empid;
+  dbms_output.put_line('employee name is '||ename);
+  dbms_output.put_line('employee salary is '||sal);
+end;
+/
