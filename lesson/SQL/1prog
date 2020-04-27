@@ -1,0 +1,5 @@
+Declare
+begin
+  dbms_output.put_line('Welcome to plsql programming');
+end;
+/
