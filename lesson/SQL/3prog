@@ -1,0 +1,18 @@
+/* program to accept balance, deposite, withdrawal and
+   calculate the final balance */
+declare
+  balance number(8,2);
+  deposite number(8,2);
+  withdrawal number(8,2);
+  final_bal number(9,2);
+  interest number(9,2);
+begin
+  balance:=&existing_balance;
+  deposite:=&deposite_amount;
+  withdrawal:=&withdrawal_amount;
+  final_bal:=balance+deposite-withdrawal;
+  dbms_output.put_line('the final balance amount is '||final_bal);
+  interest:=(final_bal*5*1)/100;
+  dbms_output.put_line('Interest calculated on final amount '||interest);
+end;
+/
