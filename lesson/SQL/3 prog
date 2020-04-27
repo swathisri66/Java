@@ -1,0 +1,45 @@
+/* package is a collection of procedures and function 
+
+1) package specification/header
+2) package body
+
+
+1) package specification/header
+   It contains the declaration of procedures and functions of the packages.
+   It does not have any detailed code.
+
+Syntax of package specification/header:
+    create or replace package <package name> is/as
+       procedure <procedure name1>(parameters);
+       procedure <procedure name2>(parameters);
+       .......
+       function <function name1>(parameters) return <datatype>;
+       function <function name2>(parameters) return <datatype>;
+       .......
+    end;
+    /
+
+SQL>@filename
+package created
+
+2) package body
+   Package body contains detailed code of the procedures and functions that are declared in
+    the package specification
+
+Syntax of package body:
+    create or replace package body <package name> is/as
+       procedure <procedure name1>(parameters) is/as
+         ...vars...
+       begin
+         ..........
+         statements
+         ..........
+       end <procedure name1>;
+       procedure <procedure name2>(parameters) is/as
+         ...vars...
+       begin
+         ..........
+         statements
+         ..........
+       end <procedure name2>;
+       ...other procedures....
