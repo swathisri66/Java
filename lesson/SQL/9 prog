@@ -1,0 +1,26 @@
+/* program to accept employee_id and display the employee_name,
+  department_name, city, country name and salary USING COLUMN TYPE variables 
+
+for this program to do  create a view with all these columns  as following in SQL>
+
+CREATE OR REPLACE VIEW V1 AS 
+SELECT E.EMPLOYEE_ID, E.FIRST_NAME, E.SALARY, D.DEPARTMENT_NAME, L.CITY, C.COUNTRY_ID
+FROM EMPLOYEES E, DEPARTMENTS D, LOCATIONS L, COUNTRIES C 
+WHERE E.DEPARTMENT_ID = D.DEPARTMENT_ID AND
+D.LOCATION_ID = L.LOCATION_ID AND
+L.COUNTRY_ID = C.COUNTRY_ID; */
+
+declare
+  x V1%ROWTYPE;     /*  'x' is a view rowtype variable  */
+begin
+  x.employee_id:=&employee_id_number;
+
+  select * into x from v1 where employee_id = x.employee_id;
+
+  dbms_output.put_line('employee name is '||x.first_name);
+  dbms_output.put_line('employee salary is '||x.salary);
+  dbms_output.put_line('department name is '||x.department_name);
+  dbms_output.put_line('employee city is '||x.city);
+  dbms_output.put_line('employee country id is '||x.country_id);
+end;
+/
