@@ -1,0 +1,39 @@
+/* program to accept employee_id and update the salary with given percentage of increment 
+   for dept 10 or 30 25%,  for dept 50 or 60 or 90  15%   others  10%  
+     USING CASE-END CASE  */
+
+declare
+  empid emp2.employee_id%type;
+  ename emp2.first_name%type;
+  sal   emp2.salary%type;
+  deptid emp2.department_id%type;
+  bonus emp2.salary%type;
+begin
+  empid:=&employee_id;
+
+  select first_name, salary, department_id into ename, sal, deptid
+    from emp2 where employee_id=empid;
+
+  case deptid
+     when 10 then 
+	 bonus:=sal*25/100;
+     when 30 then 
+	 bonus:=sal*25/100;
+     when 50 then 
+         bonus:=sal*15/100;
+     when 60 then 
+	 bonus:=sal*15/100;
+     when 90 then 
+	 bonus:=sal*15/100;
+     else
+	 bonus:=sal*10/100;
+  end case;
+  update emp2 set salary=salary+bonus where employee_id=empid;
+  dbms_output.put_line('employee name is '||ename);
+  dbms_output.put_line('employee salary is '||sal);
+  dbms_output.put_line('department id   is '||deptid);
+  dbms_output.put_line('emp bonus salary is '||bonus);
+  dbms_output.put_line('employee net salary is '||(sal+bonus));
+end;
+/
+ 
