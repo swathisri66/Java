@@ -1,0 +1,15 @@
+/* program to accept dept_id and display the other details of the row,
+   USING ROW TYPE variables  */
+
+declare
+  x departments%rowtype;
+begin
+  x.department_id:=&department_id_number;
+
+  select * into x from departments where department_id = x.department_id;
+
+  dbms_output.put_line('dept name is   '||x.department_name);
+  dbms_output.put_line('manager id  is '||x.manager_id);
+  dbms_output.put_line('location id is '||x.location_id);
+end;
+/
