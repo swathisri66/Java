@@ -1,0 +1,20 @@
+/* program to accept idno, name, subs, tot_marks and calculate avrg marks
+   and store it into the table 'marks'   */
+
+declare
+  x marks%rowtype;
+begin
+  x.idno:=&student_id;
+  x.name:='&student_name';
+  x.subs:=&number_of_subjects;
+  x.tot_marks:=&total_marks;
+  x.avrg:=x.tot_marks/x.subs;
+  insert into marks values(x.idno, x.name, x.subs, x.tot_marks, x.avrg);
+  dbms_output.put_line('average marks '||x.avrg);
+  dbms_output.put_line('values inserted into the table');
+exception
+  when zero_divide then
+    insert into marks values(x.idno, x.name, x.subs, x.tot_marks, 0);
+    dbms_output.put_line('values inserted into the table');
+end;
+/
