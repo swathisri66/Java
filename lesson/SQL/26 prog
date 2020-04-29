@@ -1,0 +1,15 @@
+/* program to use the procedure even_odd() many times  */
+
+declare
+  x number(6);
+  y number(6);
+  z number(6);
+begin
+  x:=&x;
+  y:=&y;
+  z:=&z;
+  even_odd(x+y);
+  even_odd(y-z);
+  even_odd(z+y+x);
+end;
+/
