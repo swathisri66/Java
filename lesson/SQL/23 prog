@@ -1,0 +1,29 @@
+/* example to demonstrate the use of a PARAMETERIZED CURSOR  using CURSOR ROWTYPE VARIABLE
+   A normal cursor will get created in the declare section but in case of a parameterized cursor,
+   it is created when the cursor is opend by passing the required input values for parameters. */
+
+Declare
+  st_empid employees.employee_id%type;
+  en_empid employees.employee_id%type;
+  cursor c1(st number, en number) is select e.employee_id, e.first_name, e.salary, d.department_name, 
+   l.city from employees e, departments d, locations l where e.department_id = d.department_id 
+    and d.location_id = l.location_id and employee_id between st and en order by e.employee_id;
+  x c1%rowtype;
+begin
+  st_empid:=&starting_employee_id;
+  en_empid:=&ending_employee_id;
+  open c1(st_empid, en_empid);   /* passing parameters for the cursor */
+  loop
+    fetch c1 into x;
+    exit when c1%notfound;
+    dbms_output.put_line('employee_id is '||x.employee_id);
+    dbms_output.put_line('emp name    is '||x.first_name);
+    dbms_output.put_line('emp salary  is '||x.salary);
+    dbms_output.put_line('department  is '||x.department_name);
+    dbms_output.put_line('city name   is '||x.city);
+    dbms_output.put_line('-----------------------------------');
+  end loop;
+  dbms_output.put_line('number of rows listed is '||c1%rowcount);
+  close c1;
+end;
+/
