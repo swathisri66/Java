@@ -1,0 +1,11 @@
+/* procedure to verify a given parameter and print even or odd number */
+
+create or replace procedure even_odd(x number) is
+begin
+  if mod(x,2)=0 then
+    dbms_output.put_line('the given number is EVEN number');
+  else
+    dbms_output.put_line('the given number is ODD number');
+  end if;
+end;
+/
