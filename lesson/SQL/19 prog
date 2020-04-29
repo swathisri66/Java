@@ -1,0 +1,17 @@
+/* program to update the salary of employee with given new salary
+   in 'temp' table based on empname  USING IMPLICIT CURSOR */
+
+declare
+  empname temp.first_name%type;
+  newsal temp.salary%type;
+begin
+  empname:='&employee_name';
+  newsal := &new_salary;
+  update temp set salary=newsal where first_name = empname;
+  if sql%notfound then
+    dbms_output.put_line('employee name not found');
+  else
+    dbms_output.put_line(sql%rowcount||' Record(s) updated');
+  end if;
+end;
+/
