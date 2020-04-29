@@ -1,0 +1,14 @@
+/* procedure to delete an employee record by giving employee_id  */
+
+create or replace procedure show_emp_data(dno number) is
+  cursor c1 is select employee_id, first_name, salary from emp2 where department_id=dno;
+  n number(5):=0;
+begin
+  for x in c1 
+  loop
+    dbms_output.put_line(x.employee_id||'    '||x.first_name||'   '||x.salary);
+    n:=c1%rowcount;
+  end loop;
+  dbms_output.put_line('No. of Records Listed '||n);
+end;
+/
