@@ -1,0 +1,21 @@
+/* program to use the procedure even_odd() HAVING OUT PARAMETERS many times  */
+
+declare
+  x number(6);
+  y number(6);
+  z number(6);
+  r number(6);
+  q number(6);
+begin
+  x:=&x;
+  y:=&y;
+  z:=&z;
+  even_odd(x,q,r);
+  dbms_output.put_line('x value is '||x||'  Quotient is '||q||'  Remainder is '||r);
+  even_odd(y,q,r);
+  dbms_output.put_line('x value is '||y||'  Quotient is '||q||'  Remainder is '||r);
+  even_odd(z,q,r);
+  dbms_output.put_line('x value is '||z||'  Quotient is '||q||'  Remainder is '||r);
+end;
+/
+
