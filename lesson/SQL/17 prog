@@ -1,0 +1,14 @@
+/* program to delete the details of a given employee from 'temp' table */
+
+declare
+  empid temp.employee_id%type;
+begin
+  empid:=&employee_id_number;
+  delete from temp where employee_id = empid;
+  if sql%found then
+    dbms_output.put_line('record deleted');
+  else
+    dbms_output.put_line('employee_id not found');
+  end if;
+end;
+/
