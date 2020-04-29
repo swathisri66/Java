@@ -1,0 +1,20 @@
+/* example to demonstrate the use of an explicit cursor  using CURSOR ROWTYPE VARIABLE */
+
+Declare
+  cursor c1 is select employee_id, first_name, salary from emp2 where employee_id between 101 and 105;
+  x c1%rowtype;    /* declaring cursor rowtype variable */
+begin
+  open c1;
+  loop
+    fetch c1 into x;
+    exit when c1%notfound;
+    dbms_output.put_line('employee_id is '||x.employee_id);
+    dbms_output.put_line('emp name    is '||x.first_name);
+    dbms_output.put_line('emp salary  is '||x.salary);
+    dbms_output.put_line('-----------------------------------');
+  end loop;
+  dbms_output.put_line('number of rows listed is '||c1%rowcount);
+  close c1;
+end;
+/
+
