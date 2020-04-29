@@ -1,0 +1,22 @@
+/* procedure to accept empid and deptid print name and salary from 'emp2' table
+   USING 'IN' parameters, 'OUT' parameters, 'IN OUT' parameters 
+   IN parameter values CANNOT be modified 
+   OUT parameter values CAN be modified 
+   IN OUT parameter values CAN be modified     */
+
+create or replace procedure show_emp_data(eno IN number, deptid IN OUT number, doj OUT date) is
+  ena emp2.first_name%type;
+  sal emp2.salary%type;
+begin
+  select first_name, salary, department_id, hire_date into ena, sal, deptid, doj 
+     from emp2 where employee_id=eno ;  
+  deptid := deptid + 10;
+  dbms_output.put_line('employee_name is   : '||ena);
+  dbms_output.put_line('employee salary is : '||sal);
+exception
+  when no_data_found then
+    dbms_output.put_line('employee_id does not exist');
+    deptid:=-1;
+    doj:=to_date('1-jan-1900');
+end;
+/
