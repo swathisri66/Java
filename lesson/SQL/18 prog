@@ -1,0 +1,15 @@
+/* program to delete the details of a given employee from 'temp' table 
+   based on empname  */
+
+declare
+  empname temp.first_name%type;
+begin
+  empname:='&employee_name';
+  delete from temp where first_name = empname;
+  if sql%found then
+    dbms_output.put_line(sql%rowcount||' Record(s) deleted');
+  else
+    dbms_output.put_line('employee name not found');
+  end if;
+end;
+/
