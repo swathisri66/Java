@@ -1,0 +1,21 @@
+/* example to demonstrate the use of an explicit cursor  */
+
+Declare
+  cursor c1 is select employee_id, first_name, salary from emp2 where employee_id between 101 and 105;
+  empid emp2.employee_id%type;
+  ename emp2.first_name%type;
+  sal   emp2.salary%type;
+begin
+  open c1;
+  loop
+    fetch c1 into empid, ename, sal;
+    exit when c1%notfound;
+    dbms_output.put_line('employee_id is '||empid);
+    dbms_output.put_line('emp name    is '||ename);
+    dbms_output.put_line('emp salary  is '||sal);
+    dbms_output.put_line('-----------------------------------');
+  end loop;
+  dbms_output.put_line('number of rows listed is '||c1%rowcount);
+  close c1;
+end;
+/
