@@ -1,0 +1,33 @@
+SET OPERATORS
+Its purpose is to perform a combined operation on outputs of multiple queries
+To use the set operators the query1 and query2 should have the columns in same sequence and with same datatypes.
+QUERY1			  QUERY2    
+O/P <--> SET OPERATOR <--> O/P
+
+4 SET OPERATORS
+---------------
+1) UNION	: all values of first set and second set taking each value only once
+		  In other words it is unique/distinct values of both sets
+		  The union output is in ascending order (small value to big value)
+2) INTERSECT	: It is the common values of first and second set
+		  The union output is in ascending order (small value to big value)
+3) MINUS	: The specific values of first set that are not present in second set
+4) UNION ALL    : It is all values of first & second set in the same query order(includes duplicates)
+
+first set values (O/P given by 1st query)       2nd set values (O/P given by 2nd query)
+{101, 105, 107, 108, 110, 113}			{101, 102, 104, 106, 110, 111, 113, 114}
+
+Query1 UNION Query2 	-->  {101,102,104,105,106,107,108,110,111,113,114}
+Query2 UNION Query1 	-->  {101,102,104,105,106,107,108,110,111,113,114}
+
+Query1 INTERSECT Query2 -->  {101,108,113}
+Query2 INTERSECT Query1 -->  {101,108,113}
+
+Query1 MINUS Query2 	-->  {105,107,108}
+Query2 MINUS Query1 	-->  {102,104,106,111,114}
+
+Query1 UNION ALL Query2 -->  {101,105,107,108,110,113, 101,102,104,106,110,111,113,114}
+Query2 UNION ALL Query1 -->  {101,102,104,106,110,111,113,114, 101,105,107,108,110,113}
+
+---------------------------------------------------------------------------------------------------
+
