@@ -1,0 +1,72 @@
+sub queries
+-----------
+A query inside another query is called a sub query.
+we will have an outer query and an inner query. 
+The inner query will get executed first and its output given will be used in the outer query as an input.
+The sub queries can be based on single table or multiple tables.
+
+display the number of employees getting the highest salary
+
+query 1    :    select max(salary) from emp3;
+		output--> 17000
+query 2    :	select count(*) from emp3 where salary=17000;
+		output--> 2		
+now the sub query can be written as 
+select count(*) from emp3 where salary=(select max(salary) from emp3);
+--------------------------------------------------------------------------
+list the details of the first joined employee.
+
+select * from emp3 where hire_date=(select min(hire_date) from emp3);
+--------------------------------------------------------------------------
+list the number of countries in 'Europe' region.   (relate countries and regions table)
+
+select count(*) from countries where region_id=(
+select region_id from regions where region_name='Europe');
+--------------------------------------------------------------------------
+list the number of employees of 'Sales' department. (relate employees and departments table)
+
+select count(*) from employees where department_id=(
+select department_id from departments where department_name='Sales')
+
+---------------------------------------------------------------------
+1. display the name of the course which has highest fees.
+2. how many students are there belonging to oracle course.
+3. how many students are there who have take the course of least fees
+4. what is the name of the student who has paid the leas amount.
+5. what is the name of the course in which highest 
+   number of students exist
+6. what is the idno of student with longest name.
+7. what is the course name of student who has paid highest amount
+
+select max(paid_amt) from students;   --> 1200
+select cid from students where fees=1200;   ---> 104
+select cname from courses where cno=104;  ---->tally
+
+select cname from courses where cno=(select cid from students where paid_amt=(select max(paid_amt) from students));  ---->tally
+8. list the students who belong to the courses which has fees < 3000.
+
+-----------------------------------------------------------------------
+list the number of employees in city 'Seattle'. (we have to relate employees,departments,locations)
+
+select count(*) from employees where department_id in (
+select department_id from departments where location_id in(
+select location_id from locations where city='Seattle'));
+----------------------------------------------------------------------------------
+To show the name of the region in which employee_id 105 is working.
+
+select region_name from regions where region_id = (
+select region_id from countries where country_id = (
+select country_id from locations where location_id = (
+select location_id from departments where department_id = (
+select department_id from employees where employee_id = 105))));
+----------------------------------------------------------------------------------
+To show the number of employees working in 'Europe' region
+
+select count(*) from employees where department_id in (
+select department_id from departments where location_id in (
+select location_id from locations where country_id in (
+select country_id from countries where region_id in (
+select region_id from regions where region_name = 'Europe')))); 
+
+-------------------------------------------------------------------------------------
+Joins are a technique of getting data of multiple tables at a time. 
