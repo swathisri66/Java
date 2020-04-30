@@ -1,0 +1,102 @@
+VIEWS
+-----
+A view is a representation for a 'select' query (not a table).
+Such query can be any query (
+   simple select query, 
+   select query with a filter (where condition)
+   select query with set operators (union, intersect,...)
+   select query with sub query 
+   select query with a join (any type, simple join , self, outer, cross)
+
+such view name can be used instead of the whole query
+
+CREATE VIEW <view_name> AS <select statement> ;
+
+create view v1 as 
+select * from emp2 
+where 
+employee_id between 105 and 125 and 
+department_id in (30,50,80);
+
+select * from v1;
+
+Remember that v1 is not a table, it is only a representation of the query.
+When we modiy the original table, view gets refreshed
+When we access the view, the query that is internally represented will get executed
+Therefore as of that time whatever data is available that will be displayed by the view.
+
+create view emp_summary as
+select department_id, count(*) as "count", sum(salary) as "sal_total", avg(salary) as "avg_sal", min(salary) as "leaset_sal", max(salary) as "highest_sal"
+from emp2
+where hire_date>'1-jan-05'
+group by department_id
+having count(*) > 5
+order by department_id;
+
+select * from emp_summary;
+
+select department_id, highest_sal from emp_summary;    (this is an error)
+
+select department_id, "highest_sal" from emp_summary;    (this is correct now)
+
+select department_id, "highest_sal" from emp_summary where "highest_sal">10000;
+
+select department_id, "highest_sal" from emp_summary where department_id>=60;
+
+create view emp_data as
+select e.employee_id, e.first_name, d.department_name, j.job_title
+from employees e, departments d, jobs j
+where e.department_id=d.department_id
+and e.job_id = j.job_id;
+
+select * from emp_data;
+
+select * from emp_data where department_name='Finance';
+------------------------------------------------------------------
+
+Views can be granted to other users, so that the other users can see only that specific data.
+
+HR>	grant select on emp_data to ramesh;
+RAMESH>	select * from hr.emp_data;
+RAMESH> create synonym x for hr.emp_data;
+RAMESH> select * from x;
+
+SELECT * FROM user_views;
+SELECT view_name, text FROM user_views;
+This table shows the information about the view and thier represented query.
+
+DROP VIEW v1;
+DROP VIEW emp_data;
+====================================================================================
+SEQUENCES
+---------
+A sequence is series of values created at the database server, so that these values
+can be used by us to intert them into the table
+This will ensure that no values is skipped or repeated.
+Also from the user side, the burden of remembering the next coming number can be avoided.
+
+CREATE SEQUENCE <seqname> 
+INCREMENT BY <value>
+START WITH <value>
+MAXVALUE <value>;
+
+Once the sequence is created, we use that sequence by the pseudo columns 
+CURRVAL, NEXTVAL
+
+create sequence seq1 increment by 1 start with 111 ;
+
+insert into emp3 values (seq1.nextval, 'Ramesh',10000, 1000, 'ac_mgr', '10-mar-20');
+
+select seq1.currval from dual; 
+
+select * from user_sequences;
+
+drop sequence <sequence_name>;
+drop sequence seq1;
+
+
+
+
+
+
+
