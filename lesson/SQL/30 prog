@@ -1,0 +1,12 @@
+/* function that returns salary of employee by taking empid as parameter */
+
+create or replace function get_salary(eno number) return number is
+  sal emp2.salary%type;
+begin
+  select salary into sal from emp2 where employee_id=eno;
+  return sal;
+exception
+  when no_data_found then
+     return -1;
+end;
+/
