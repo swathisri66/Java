@@ -1,0 +1,14 @@
+<web-app>
+
+  <!--  this is the first servlet program  -->
+  <servlet>
+    <servlet-name>serv1</servlet-name>
+    <servlet-class>HelloServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>serv1</servlet-name>
+    <url-pattern>/sayhello</url-pattern>
+  </servlet-mapping>
+
+
+</web-app>
