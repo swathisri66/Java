@@ -1,0 +1,19 @@
+/* first servlet program to display a hello message from tomcat server
+   'javax' package is present in 'servlet-api.jar'
+   user defined class must become a servlet. In order to do that we have 3 options
+    1)   public class HelloServlet implements Servlet
+    2)   public class HelloServlet extends GenericServlet
+    3)   public class HelloServlet extends HttpServlet
+*/
+
+import javax.servlet.*;
+import javax.servlet.http.*;
+import java.io.*;
+public class HelloServlet extends HttpServlet
+{
+   public void service(HttpServletRequest rq, HttpServletResponse rs) throws ServletException, IOException
+   {
+        PrintWriter pw=rs.getWriter();
+        pw.println("Hello World, Welcome to First Servlet Program");
+   }
+}
