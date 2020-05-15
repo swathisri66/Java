@@ -1,0 +1,29 @@
+//program to find total and percentage of marks using class totalmarks
+import javax.servlet.*;
+import java.io.*;
+import javax.servlet.http.*;
+public class TotalMarks extends HttpServlet
+{
+	public void service(HttpServletRequest q,HttpServletResponse s) throws IOException,ServletException
+	{
+	  int v1=Integer.parseInt(q.getParameter("val1"));
+	  int v2=Integer.parseInt(q.getParameter("val2"));
+	  int v3=Integer.parseInt(q.getParameter("val3"));
+	  int v4=Integer.parseInt(q.getParameter("val4"));
+	  int v5=Integer.parseInt(q.getParameter("val5"));
+	  int v6=Integer.parseInt(q.getParameter("val6"));
+	  int tot=v1+v2+v3+v4+v5+v6;
+	  int per=(tot/600)*100;
+	  PrintWriter pw=s.getWriter();
+	  pw.println("<html><body background='1.jpg' text='pink'><center>");
+	  pw.println("<br>s1 marks:+v1");
+	  pw.println("<br>s2 marks:+v2");
+	  pw.println("<br>s3 marks:+v3");
+	  pw.println("<br>s4 marks:+v4");
+	  pw.println("<br>s5 marks:+v5");
+	  pw.println("<br>s6 marks:+v6");
+	  pw.println("<br><b>total marks:+tot</b>");
+	  pw.println("<br><i>percentage:+per</i>");
+	  pw.println("</center></body></html>");
+	}
+}  
