@@ -1,0 +1,34 @@
+<web-app>
+
+  <!--  this is the first servlet program  -->
+  <servlet>
+    <servlet-name>serv1</servlet-name>
+    <servlet-class>HelloServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>serv1</servlet-name>
+    <url-pattern>/sayhello</url-pattern>
+  </servlet-mapping>
+
+  <!--  add.html  to  Add.java   -->
+  <servlet>
+    <servlet-name>serv2</servlet-name>
+    <servlet-class>Add</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>serv2</servlet-name>
+    <url-pattern>/doadd</url-pattern>
+  </servlet-mapping>
+
+  <!--  totalmarks.html  to  TotalMarks.java   -->
+  <servlet>
+    <servlet-name>totalserv</servlet-name>
+    <servlet-class>TotalMarks</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>totalserv</servlet-name>
+    <url-pattern>/dototalmarks</url-pattern>
+  </servlet-mapping>
+
+
+</web-app>
