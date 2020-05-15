@@ -1,0 +1,94 @@
+HTML : Hyper Text Markup Language
+
+HTML is used for designing static web pages
+
+HTML commands are called Tags and tags are written within <TAG>
+Type of HTML tags are :
+--> Singular tags	These tags have only the beginning, no ending symbol
+	Ex: <br>  <p>  <hr>  <marquee>
+
+--> Paired tags		These tags have beginning and ending tag
+	Ex:  <html> ...	</html>  
+	     <b>  .....	</b>
+ 	     <body> ...	</body>
+
+Some Tags have subtags 
+<html>
+  <head>
+     <title>
+       ......
+     </title
+  </head>
+  <body>
+     <table background="...." border="..">
+       <th>
+         <td> data </td
+       </th>
+       <tr>
+         <td>
+           .....
+         </td>
+       </tr>
+     </table>
+  </body>
+</html>
+Some Tags have attributes. Attribute values are given within "value" or 'value' or value
+
+  <body bgcolor="yellow"> 
+
+  </body>
+
+-----------------------
+HTML BASIC TAGS
+
+Heading tags:
+<H1>  heading 1 style  </H1>
+<H2>  heading 2 style  </H2>
+<H3>  heading 3 style  </H3>
+<H4>  heading 4 style  </H4>
+<H5>  heading 5 style  </H5>
+<H6>  heading 6 style  </H6>
+
+formatting tags
+<b> bold </b>  OR  <strong>  </strong>
+<i> italic </i>
+<u> underline </u>
+<big> big text </big>
+<small> small text </small>
+<sub>  subscript  </sub>
+<sup>  superscript  </sup>
+<font face="fontname" color="colour name" size="1-7">
+   ...text...
+</font>
+
+anchor tag <a href="path&filename"> display text </a>
+<marquee > scrolling text </marquee>
+<hr size="value" color="colour name" width="%" align="left/right/center">  horizontal ruler
+<br>  line break tag
+<p>   paragraph break
+
+Form tags : these are used to create form controls like text box, checkbox, button, etc.
+
+
+<form name="var" action="server side filename" method="get/post">
+  [formcontrol tags are given here]
+</form>
+
+Form control tags:
+------------------
+<input type="text" value="val" name="var"> 
+'type' attribute values
+text	 	: to display a text box
+password 	: to display password box (characters given as input here will be shown as dots...)
+number	 	: to display a box that will accept only numbers without decimal
+decimal	 	: to display a box that will accept decimal values
+button		: to create a command button (like save, cancel, yes, no)
+checkbox	: to display a check box in which we can select it by putting a tickmark
+radio		: to display multiple options out of which any one only can be selected
+		   radio buttons must be used as a group of atleast 2 that has 'name' as same property value
+date		: to display date values by showing a calender
+time		: to show a time box that contains Hours minutes seconds and am/pm
+color		: to show the colour palett from where user required colour can be selected
+submit		: same like button but is used to submit the form data to the web server
+reset		: same like button but it is used to clear & reset all values of the form controls to default
+
