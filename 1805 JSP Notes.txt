@@ -1,0 +1,91 @@
+JSP  Java Server Pages
+
+It is technology used to develop web-appications
+
+other similar technologies
+----------------------------
+Servlets in java
+JSP  Java server pages
+PHP  Hypertext pre processor 
+ASP  Active server pages  (using C# or J# or VB.net)
+Django (using python)
+Ruby on rails  
+--------------------------------------------------------------------------
+
+JSP is inbuilt with the complete java API
+
+- JSP code can be enbbeded into a html / xml program
+- it does not need an external compiler. (program is internally compiled)
+- output is always on to a browser (html/xml format)
+- it is an advancement of servlet technology
+- simple to implement, and easy to learn
+- no long programming (very small programming comparitively)
+- jsp program --> Web Server (tomcat) converts into a servlet prog. --> compiles into a .class --> 
+  gets executed and provides response to the browser.
+- no need of restart the server. 
+- no need to write the web.xml declaration and mapping
+
+---------------------------------------------------------------------------------------------
+
+JSP commands are called tags
+They are of 3 types:
+1) Expression tag	<%=  expression tag   %>
+2) Declaration tag	<%!  declaration tag  %>
+3) Scriptlet tag	<%   scriptlet tag    %>
+
+1) Expression tag   	This type of tags are used to display messages or 
+			values of variables
+		 	<%=  "message"+var  %>
+
+2) Declaration tag	This type of tag is used to declare variables and functions
+			needed  for the JSP program  
+			<%!
+			     datatype variables;
+			     function()
+			     {
+				NOTE: void type functions are not allowed in JSP
+   	`		     }
+			%>
+
+3) Scriptlet tag	This tag is used to write our java code
+			<%
+			    .........
+			    Java code
+			    .........
+			%>
+			within the scirptlet tag we use implicit/predefined JSP objects
+			-out	 	object of JSPWriter
+			-request	HttpServletRequest
+			-response	HttpServletResponse
+			-config		ServletConfig
+			-application	ServletContext
+			-session	HttpSession
+			-exception	Exception
+			-page		Object
+			-pageContext	PageContext
+
+
+JSP Directives
+--------------
+'page' directive     to create/set the page attributes
+it has 3 attributes 
+1) errorPage='filename' 	: to indicate the name of the file in which the 
+				   error/exception is to be handelled
+				  this is like a catch block of exception handelling
+2) isErrorPage=true/false       : It should be set to true when define the 
+				   error handelling jsp file
+3) import='<packagename>.<classname/*>'   : to import a package class or interface or 
+					    all contents of a package (*)
+
+'include' directive   it has one attrribute
+1) file="path&filename"	 : indicates the name of the file to be shown with the response page.
+----------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
