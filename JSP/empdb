@@ -1,0 +1,30 @@
+<!--   empdb.html to EmpDB.jsp    -->
+
+<html>
+ <body>
+   <%@page import="java.sql.*" %>
+   <%
+      out.println("<html><body><center>");
+      try
+      {
+         Class.forName("oracle.jdbc.driver.OracleDriver");
+         Connection cn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","hr","manager");
+         PreparedStatement ps=cn.prepareStatement("insert into emp4 values(?,?,?,?)");
+         ps.setInt(1,Integer.parseInt(request.getParameter("idno")));
+         ps.setString(2,request.getParameter("ename"));
+         ps.setInt(3,Integer.parseInt(request.getParameter("sal")));
+         ps.setInt(4,Integer.parseInt(request.getParameter("deptid")));
+
+         int n=ps.executeUpdate();
+         if (n>0)    // if (ps.getUpdateCount()>0)
+           out.println("<p> <font color='red' size='5'> Record Inserted </font> <hr color='blue'> ");
+      }
+      catch(Exception e)
+      {
+         out.println(e);
+      }
+      out.println("</center></body></html>");
+   %>
+   <%@include file="empdb.html" %>
+ </body>
+</html>
