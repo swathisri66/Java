@@ -1,0 +1,11 @@
+<!--  sum2.html  to  Add2.jsp -->
+
+<html>
+ <body>
+   <form name="form1" action="Add2.jsp">
+     <p> First Value : <input type="number" name="val1"> 
+     <p> Second Value : <input type="number" name="val2"> 
+     <p>  <input type="submit"> 
+   </form>
+ </body>
+</html>
