@@ -1,0 +1,13 @@
+import java.util.Scanner;
+class PerimeterOfEquilateralTriangle1
+{
+   public static void main(String args[]) 
+    {   
+       
+            double a= Double.parseDouble(args[0]);
+               
+	    double  perimeter=3*a;  
+      
+      	    System.out.println("perimeter of Triangle is: " + perimeter);      
+   }
+}
